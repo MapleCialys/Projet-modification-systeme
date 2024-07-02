@@ -1,2 +1,28 @@
-# Projet-modification-systeme
-Projet pour la session modification d'un systeme existant
+# Devflix
+
+## Table des matières
+- [Devflix](#devflix)
+  - [Table des matières](#table-des-matières)
+  - [Description](#description)
+  - [Les membres de l'équipe](#les-membres-de-léquipe)
+  - [Instructions d'installation](#instructions-dinstallation)
+
+## Description
+Projet créé dans le cadre du cours «  Modification d’un système existant ». Ce projet consiste en un répertoire de films populaires pour la location. Il contient la liste des films avec les acteurs principaux, studio et description.
+  
+Ce projet contiendra les pages suivantes :
+- Page de connexion
+- Pages d'ajout de films, acteurs, studios
+- Pages de modifications et de suppression
+- Interface administrateur pour la gestion
+- Page de catalogue
+
+## Les membres de l'équipe
+L'équipe est copmposée de
+- Mickaël François (202345000)
+- Aurore Langlet (202346982)
+- Josué Therrien (202150457)
+- Nelson Therrien (198855262)
+
+## Instructions d'installation
+À venir
