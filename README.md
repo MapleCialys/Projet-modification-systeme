@@ -19,10 +19,10 @@ Ce projet contiendra les pages suivantes :
 
 ## Les membres de l'équipe
 L'équipe est copmposée de
-- Mickaël François (202345000)
-- Aurore Langlet (202346982)
-- Josué Therrien (202150457)
-- Nelson Therrien (198855262)
+1. Mickaël François (202345000)
+2. Aurore Langlet (202346982)
+3. Josué Therrien (202150457)
+4. Nelson Therrien (198855262)
 
 ## Instructions d'installation
 À venir
