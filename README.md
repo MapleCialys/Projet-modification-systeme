@@ -1,11 +1,10 @@
 # Devflix
 
 ## Table des matières
-- [Devflix](#devflix)
-  - [Table des matières](#table-des-matières)
-  - [Description](#description)
-  - [Les membres de l'équipe](#les-membres-de-léquipe)
-  - [Instructions d'installation](#instructions-dinstallation)
+1. [Table des matières](#table-des-matières)
+2. [Description](#description)
+3. [Les membres de l'équipe](#les-membres-de-léquipe)
+4. [Instructions d'installation](#instructions-dinstallation)
 
 ## Description
 Projet créé dans le cadre du cours «  Modification d’un système existant ». Ce projet consiste en un répertoire de films populaires pour la location. Il contient la liste des films avec les acteurs principaux, studio et description.
