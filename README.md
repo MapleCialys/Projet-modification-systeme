@@ -24,4 +24,10 @@ L'équipe est copmposée de
 4. Nelson Therrien (198855262)
 
 ## Instructions d'installation
-À venir
+Entrez les lignes de commande : 
+    ```javascript
+        npm create svelte@latest my-app
+        cd my-app
+        npm install
+        npm run dev -- --open
+    ```
