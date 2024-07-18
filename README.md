@@ -26,8 +26,8 @@ L'équipe est copmposée de
 ## Instructions d'installation
 - Entrez les lignes de commande :
     ```javascript
-        npm create svelte@latest my-app
-        cd my-app
+        npm create svelte@latest devflix
+        cd devflix
         npm install
         npm run dev -- --open
     ```
