@@ -58,6 +58,7 @@ C42 | Utilisateurs | Liste des utilisateurs | 3 | N/A | 3 |
 C43 | Gestion des rôles | Changer le rôle d'un utilisateur | 3 | N/A | 3 |
 C44 | Ajouter compte | Création de nouveaux comptes utilisateurs | 3 | N/A | 3 |
 C45 | Supprimer compte | Supprimer des comptes utilisateurs | 3 | N/A | 3 |
+C46 | Déconnexion | Bouton de déconnexion | 0 | N/A | 1 |
 
 
 ## Fonctionnalités internes 
