@@ -111,4 +111,4 @@ I40 | Gestion des rôles | Changer le rôle d'un utilisateur dans la bd | 3 | N/
 I41 | Ajouter compte | Création de nouveaux comptes utilisateurs dans la bd | 3 | N/A | 3 |
 I42 | Supprimer compte | Supprimer des comptes utilisateurs dans la bd | 3 | N/A | 3 |
 I43 | Notification courriel | Notifier l'utilisateur par courriel quand il valide une réservation | 0 | N/A | 1 |
-I46 | Déconnexion | Déconnecte l'utilisateur | 0 | N/A | 1 |
+==I46== | Déconnexion | Déconnecte l'utilisateur | 0 | N/A | 1 |
