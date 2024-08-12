@@ -42,16 +42,16 @@ C26 | Liaison film/client | Lier un film à un client depuis le catalogue ou la 
 C27 | Retours | Liste de films sortis de l'inventaire | 1 | N/A | 1 |
 C28 | Valider retour | Case à cocher + bouton soumettre pour valider le retour en inventaire des films ramenés par le client | 1 | N/A | 1 |
 C29 | Filtre retard | Filtre pour afficher uniquement les films en retard | 1 | N/A | 1 |
-C30 | Ajout film | Formulaire pour ajouter des films dans la base de données | 2 | N/A | 1 |
-C31 | Valider ajout film | Bouton soumettre le formulaire pour ajouter des films dans la base de données | 2 | N/A | 1 |
+C30 | Ajout film | Formulaire pour ajouter des films dans la base de données | 2 | ajout-film | 1 |
+C31 | Valider ajout/modification film | Bouton soumettre le formulaire pour ajouter ou modifier des films dans la base de données | 2 | ajout-film et modifier-film | 1 |
 C32 | Ajout acteur | Formulaire pour ajouter des acteurs dans la base de données | 2 | N/A | 1 |
 C33 | Valider acteur | Bouton soumettre le formulaire pour ajouter des acteur dans la base de données | 2 | N/A | 1 |
-C34 | Modifier film | Formulaire pour modifier des films de la base de données | 2 | N/A | 1 |
+C34 | Modifier film | Formulaire pour modifier des films de la base de données | 2 | details_film | 1 |
 C35 | Valider modification film | Bouton soumettre le formulaire pour modifier des films de la base de données | 2 | N/A | 1 |
 C36 | Modifier acteur | Formulaire pour modifier des acteurs de la base de données | 2 | N/A | 1 |
 C37 | Valider modifier acteur | Bouton soumettre le formulaire pour modifier des acteur de la base de données | 2 | N/A | 1 |
-C38 | Suppression film | Formulaire pour supprimer des films de la base de données | 2 | N/A | 1 |
-C39 | Valider suppression film | Bouton soumettre le formulaire pour supprimer des films de la base de données | 2 | N/A | 1 |
+C38 | Suppression film | Bouton pour supprimer le film de la base de données | 2 | modifier-film | 1 |
+C39 | Lier film et acteur | Bouton pour ajouter un acteur au film en modification | 2 | ajout-film et modifier-film | 1 |
 C40 | Suppression acteur | Formulaire pour supprimer des acteurs de la base de données | 2 | N/A | 1 |
 C41 | Valider suppression acteur | Bouton soumettre le formulaire pour supprimer des acteurs de la base de données | 2 | N/A | 1 |
 C42 | Utilisateurs | Liste des utilisateurs | 3 | N/A | 3 |
@@ -67,6 +67,7 @@ C45 | Supprimer compte | Supprimer des comptes utilisateurs | 3 | N/A | 3 |
 ==C52== | Triage utilisateurs | Bouton de triage pour la liste des utilisateurs | 3 | N/A | 3 |
 ==C53== | Recherche utilisateurs | Barre de recherche pour la liste des utilisateurs | 3 | N/A | 3 |
 ==C54== | Résilier abonnement | Bouton pour résiler son abonnement (ne plus être membre) | 0 | N/A | 3 |
+C55 | Délier film et acteur | Lien texte pour supprimer le lien entre un acteur et un film en modification | 2 | ajout-film et modifier-film | 1 |
 
 
 ## Fonctionnalités internes 
