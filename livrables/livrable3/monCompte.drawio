@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.5 Chrome/126.0.6478.183 Electron/31.3.0 Safari/537.36" version="24.7.5">
   <diagram id="ljUYexrTJV3vJKpsYPH5" name="MonCompte">
-    <mxGraphModel dx="4325" dy="3753" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="3800" dy="3442" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -73,16 +73,10 @@
         <mxCell id="9evtDOsmeqiBR4keEaEm-121" value="" style="rounded=1;whiteSpace=wrap;html=1;sketch=1;curveFitting=1;jiggle=2;" parent="1" vertex="1">
           <mxGeometry x="-1380" y="-1322" width="800" height="642" as="geometry" />
         </mxCell>
-        <mxCell id="9evtDOsmeqiBR4keEaEm-126" value="Retour" style="rounded=1;fillColor=#F1F2F4;strokeColor=none;html=1;whiteSpace=wrap;fontColor=#596780;align=center;verticalAlign=middle;fontStyle=0;fontSize=17;sketch=0;fontFamily=Helvetica;" parent="1" vertex="1">
+        <mxCell id="9evtDOsmeqiBR4keEaEm-130" value="Enregistrer les modifications" style="rounded=1;fillColor=#008a00;strokeColor=#005700;html=1;whiteSpace=wrap;fontColor=#ffffff;align=center;verticalAlign=middle;fontStyle=0;fontSize=17;sketch=0;fontFamily=Helvetica;" parent="1" vertex="1">
           <mxGeometry x="-140" y="-738" width="200" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="9evtDOsmeqiBR4keEaEm-127" value="C18" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.text.callout;linkText=;textSize=17;textColor=#666666;callDir=NE;callStyle=line;fontSize=17;align=right;verticalAlign=top;strokeColor=#005700;fillColor=#008a00;fontColor=#ffffff;" parent="1" vertex="1">
-          <mxGeometry x="-260" y="-850" width="470" height="112" as="geometry" />
-        </mxCell>
-        <mxCell id="9evtDOsmeqiBR4keEaEm-130" value="Enregistrer les modifications" style="rounded=1;fillColor=#008a00;strokeColor=#005700;html=1;whiteSpace=wrap;fontColor=#ffffff;align=center;verticalAlign=middle;fontStyle=0;fontSize=17;sketch=0;fontFamily=Helvetica;" parent="1" vertex="1">
-          <mxGeometry x="-360" y="-738" width="200" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="9evtDOsmeqiBR4keEaEm-132" value="C8" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.text.callout;linkText=;textSize=17;textColor=#666666;callDir=NE;callStyle=line;fontSize=17;align=right;verticalAlign=top;strokeColor=#005700;fillColor=#008a00;fontColor=#ffffff;" parent="1" vertex="1">
+        <mxCell id="9evtDOsmeqiBR4keEaEm-132" value="C18" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.text.callout;linkText=;textSize=17;textColor=#666666;callDir=NE;callStyle=line;fontSize=17;align=right;verticalAlign=top;strokeColor=#005700;fillColor=#008a00;fontColor=#ffffff;" parent="1" vertex="1">
           <mxGeometry x="-30" y="-800" width="240" height="62" as="geometry" />
         </mxCell>
         <mxCell id="9evtDOsmeqiBR4keEaEm-139" value="" style="group" parent="1" vertex="1" connectable="0">
@@ -224,8 +218,11 @@
         <mxCell id="9evtDOsmeqiBR4keEaEm-125" value="&lt;font color=&quot;#000000&quot;&gt;AAA-MM-JJ&lt;/font&gt;" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;fillColor=#F1F2F4;strokeColor=#666666;align=left;spacing=15;fontSize=14;fontColor=#6C767D;flipV=1;" parent="tmP-zMUS-FUI-W8UoyRU-17" vertex="1">
           <mxGeometry y="30" width="150" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="8_HBmUuwCPDIVO9Qemzf-1" value="C54" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.text.callout;linkText=;textSize=17;textColor=#666666;callDir=NE;callStyle=line;fontSize=17;align=right;verticalAlign=top;strokeColor=#005700;fillColor=#008a00;fontColor=#ffffff;" vertex="1" parent="1">
+        <mxCell id="8_HBmUuwCPDIVO9Qemzf-1" value="C54" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.text.callout;linkText=;textSize=17;textColor=#666666;callDir=NE;callStyle=line;fontSize=17;align=right;verticalAlign=top;strokeColor=#005700;fillColor=#008a00;fontColor=#ffffff;" parent="1" vertex="1">
           <mxGeometry x="22.5" y="-1140" width="207.5" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="WY97R_yTGnBWLJdn3T4b-1" value="C54" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.text.callout;linkText=;textSize=17;textColor=#666666;callDir=NE;callStyle=line;fontSize=17;align=right;verticalAlign=top;strokeColor=#005700;fillColor=#008a00;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="-30" y="-960" width="260" height="62" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
