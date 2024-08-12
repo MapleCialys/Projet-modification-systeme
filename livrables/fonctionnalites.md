@@ -60,9 +60,13 @@ C44 | Ajouter compte | Création de nouveaux comptes utilisateurs | 3 | N/A | 3 
 C45 | Supprimer compte | Supprimer des comptes utilisateurs | 3 | N/A | 3 |
 ==C46== | Déconnexion | Bouton de déconnexion | 0 | N/A | 1 |
 ==C47== | Recherche acteur | Barre de recherche pour les acteurs | 0 | N/A | 3 |
-==C48== | Description Acteur | Lien vers la page de description d'un acteur | 0 | N/A | 1 |
-==C49== | Filtres Acteur | Filtre pour la pages des acteurs | 0 | N/A | 3 |
+==C48== | Description acteur | Lien vers la page de description d'un acteur | 0 | N/A | 1 |
+==C49== | Filtres acteur | Filtre pour la pages des acteurs | 0 | N/A | 3 |
 ==C50== | Triage | Bouton de triage pour les pages catalogue et acteurs | 0 | N/A | 3 |
+==C51== | Filtres utilisateurs | Filtre pour la liste des utilisateurs | 3 | N/A | 3 |
+==C52== | Triage utilisateurs | Bouton de triage pour la liste des utilisateurs | 3 | N/A | 3 |
+==C53== | Recherche utilisateurs | Barre de recherche pour la liste des utilisateurs | 3 | N/A | 3 |
+==C54== | Résilier abonnement | Bouton pour résiler son abonnement (ne plus être membre) | 0 | N/A | 3 |
 
 
 ## Fonctionnalités internes 
