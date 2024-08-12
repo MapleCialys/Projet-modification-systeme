@@ -13,16 +13,16 @@ Chaque niveau d'accréditation possède ses propres droits ainsi que ceux des ni
 
 Code | Nom | Description | Niveau d'accreditation | Maquette(s) associée(s) | Niveau de priorité
 :---: | --- | --- | --- | :---: | --- 
-C1 | Catalogue | Visualiser les films | 0 | N/A | 1 |
-C2 | Lien description | Bouton vers la page de description d'un film depuis le catalogue | 0 | N/A | 1 |
-C3 | Description | Page avec les détails d'un film (synopsis, acteurs, etc.) | 0 | N/A | 1 |
-C4 | Acteurs | Liens vers les acteurs | 0 | N/A | 1 |
-C5 | Ajout au panier | Ajouter des films dans le panier de l'utilisateur | 0 | N/A | 1 |
-C6 | Recherche catalogue | Barre de recherche pour le catalogue de films | 0 | N/A | 2 |
-C7 | Bande annonce | Vidéo bande annonce du film avec bouton de lecture ou muet | 0 | N/A | 2 |
-C8 | Retour | Bouton de retour vers le catalogue ou une recherche effectuée | 0 | N/A | 2 |
+C1 | Catalogue | Visualiser les films | 0 | catalogue | 1 |
+C2 | Lien description | Bouton vers la page de description d'un film depuis le catalogue | 0 | catalogue | 1 |
+C3 | Description | Page avec les détails d'un film (synopsis, acteurs, etc.) | 0 | details_film | 1 |
+C4 | Acteurs | Liens vers les acteurs | 0 | details_film | 1 |
+C5 | Ajout au panier | Ajouter des films dans le panier de l'utilisateur | 0 | catalogue et details_film | 1 |
+C6 | Recherche catalogue | Barre de recherche pour le catalogue de films | 0 | catalogue et details_film  | 2 |
+C7 | Bande annonce | Vidéo bande annonce du film avec bouton de lecture ou muet | 0 | details_film | 2 |
+C8 | Retour | Bouton de retour vers le catalogue ou une recherche effectuée | 0 | details_film | 2 |
 C9 | Panier | Tableau/liste des films dans le panier | 0 | N/A | 1 |
-C10 | Quantité disponible | Afficher la quantité disponible de chaque film dans le panier | 0 | N/A | 3 |
+C10 | Quantité disponible | Afficher la quantité disponible de chaque film dans la page détails | 0 | details_film | 3 |
 C11 | Réservation | Bouton pour réserver les films dans le panier de l’utilisateur | 0 | N/A | 1 |
 C12 | Supprimer | Boutons pour retirer les films individuellement dans le panier de l’utilisateur | 0 | N/A | 1 |
 C13 | Vider le panier | Bouton pour vider le panier de l'utilisateur | 0 | N/A | 1 |
@@ -58,7 +58,7 @@ C42 | Utilisateurs | Liste des utilisateurs | 3 | N/A | 3 |
 C43 | Gestion des rôles | Changer le rôle d'un utilisateur | 3 | N/A | 3 |
 C44 | Ajouter compte | Création de nouveaux comptes utilisateurs | 3 | N/A | 3 |
 C45 | Supprimer compte | Supprimer des comptes utilisateurs | 3 | N/A | 3 |
-==C46== | Déconnexion | Bouton de déconnexion | 0 | N/A | 1 |
+==C46== | Déconnexion | Bouton de déconnexion | 0 | Toutes les pages | 1 |
 ==C47== | Recherche acteur | Barre de recherche pour les acteurs | 0 | N/A | 3 |
 ==C48== | Description acteur | Lien vers la page de description d'un acteur | 0 | N/A | 1 |
 ==C49== | Filtres acteur | Filtre pour la pages des acteurs | 0 | N/A | 3 |
