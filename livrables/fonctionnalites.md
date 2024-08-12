@@ -9,7 +9,7 @@
 Chaque niveau d'accréditation possède ses propres droits ainsi que ceux des niveaux inférieurs.
 
 
-## Fonctionnalités client 
+## Fonctionnalités client
 
 Code | Nom | Description | Niveau d'accreditation | Maquette(s) associée(s) | Niveau de priorité
 :---: | --- | --- | --- | :---: | --- 
@@ -29,8 +29,8 @@ C13 | Vider le panier | Bouton pour vider le panier de l'utilisateur | 0 | N/A |
 C14 | Authentification | Authentification d'un utilisateur | 0 | N/A | 2 |
 C15 | Création d'un compte | Création d'un compte utilisateur | 0 | N/A | 2 |
 C16 | Mot de passe oublié | Bouton de récupération du mot de passe d'un utilisateur ayant un compte | 0 | N/A | 3 |
-C17 | Mon compte | Visualiser ses informations d'utilisateur (nom, adresse, courriel, etc.) | 0 | N/A | 3 |
-C18 | Modifier compte | Modifier ses informations d'utilisateur | 0 | N/A | 3 |
+C17 | Mon compte | Visualiser ses informations d'utilisateur (nom, adresse, courriel, etc.) | 0 | monCompte | 3 |
+C18 | Modifier compte | Modifier ses informations d'utilisateur | 0 | monCompte, editerUtilisateur | 3 |
 C19 | Locations | Liste des locations en cours de l'utilisateur | 0 | N/A | 2 |
 C20 | Retards | Liste des films en retard de l'utilisateur | 0 | N/A | 2 |
 C21 | Renouveler | Renouveler une location/reporter la date de retour depuis le compte client | 0 | N/A | 2 |
@@ -54,22 +54,22 @@ C38 | Suppression film | Formulaire pour supprimer des films de la base de donn�
 C39 | Valider suppression film | Bouton soumettre le formulaire pour supprimer des films de la base de données | 2 | N/A | 1 |
 C40 | Suppression acteur | Formulaire pour supprimer des acteurs de la base de données | 2 | N/A | 1 |
 C41 | Valider suppression acteur | Bouton soumettre le formulaire pour supprimer des acteurs de la base de données | 2 | N/A | 1 |
-C42 | Utilisateurs | Liste des utilisateurs | 3 | N/A | 3 |
-C43 | Gestion des rôles | Changer le rôle d'un utilisateur | 3 | N/A | 3 |
-C44 | Ajouter compte | Création de nouveaux comptes utilisateurs | 3 | N/A | 3 |
-C45 | Supprimer compte | Supprimer des comptes utilisateurs | 3 | N/A | 3 |
-==C46== | Déconnexion | Bouton de déconnexion | 0 | Toutes les pages | 1 |
+C42 | Utilisateurs | Liste des utilisateurs | 3 | utilisateurs | 3 |
+C43 | Gestion des rôles | Changer le rôle d'un utilisateur | 3 | editerUtilisateur | 3 |
+C44 | Ajouter compte | Création de nouveaux comptes utilisateurs | 3 | ajoutUtilisateur | 3 |
+C45 | Supprimer compte | Supprimer des comptes utilisateurs | 3 | editerUtilisateur | 3 |
+==C46== | Déconnexion | Bouton de déconnexion | 0 | Toutes les pages sauf connexion et création de compte (côté client pas admin) | 1 |
 ==C47== | Recherche acteur | Barre de recherche pour les acteurs | 0 | N/A | 3 |
 ==C48== | Description acteur | Lien vers la page de description d'un acteur | 0 | N/A | 1 |
 ==C49== | Filtres acteur | Filtre pour la pages des acteurs | 0 | N/A | 3 |
-==C50== | Triage | Bouton de triage pour les pages catalogue et acteurs | 0 | N/A | 3 |
-==C51== | Filtres utilisateurs | Filtre pour la liste des utilisateurs | 3 | N/A | 3 |
-==C52== | Triage utilisateurs | Bouton de triage pour la liste des utilisateurs | 3 | N/A | 3 |
-==C53== | Recherche utilisateurs | Barre de recherche pour la liste des utilisateurs | 3 | N/A | 3 |
-==C54== | Résilier abonnement | Bouton pour résiler son abonnement (ne plus être membre) | 0 | N/A | 3 |
+==C50== | Triage acteur | Bouton de triage pour les pages catalogue et acteurs | 0 | N/A | 3 |
+==C51== | Filtres utilisateurs | Filtre pour la liste des utilisateurs | 3 | utilisateurs | 3 |
+==C52== | Triage utilisateurs | Bouton de triage pour la liste des utilisateurs | 3 | utilisateurs | 3 |
+==C53== | Recherche utilisateurs | Barre de recherche pour la liste des utilisateurs | 3 | utilisateurs | 3 |
+==C54== | Résilier abonnement | Bouton pour résiler son abonnement (ne plus être membre) | 0 | monCompte | 3 |
 
 
-## Fonctionnalités internes 
+## Fonctionnalités internes
 Code | Nom | Description | Niveau d'accreditation | Maquette(s) associée(s) | Niveau de priorité
 :---: | --- | --- | --- | :---: | --- 
 I1 | Catalogue | Récupérer la liste de tous les films actifs de la base de données | 0 | N/A | 1 |
@@ -92,8 +92,8 @@ I17 | Création d'un compte | Encryption du mot de passe et ajout du compte dans
 I18 | Mot de passe oublié | Envoi d'un courriel de récupération pour un mot de passe oublié avec un lien spécifique | 0 | N/A | 3 |
 I19 | Vérification du lien de mot de passe | Vérification du lien avec la bd pour valider que l'utilisateur est légitime. Redirige à la page d'accueil sinon | 0 | N/A | 4 |
 I20 | Formulaire de réinitialisation du mot de passe | Changer le mot de passe de l'utilisateur dans la bd | 0 | N/A | 2 |
-I21 | Mon compte | Récupérer et afficher les informations du compte de l'utilisateur (nom, adresse, courriel, etc.) | 0 | N/A | 3 |
-I22 | Modifier compte | Modifier les informations du compte de l'utilisateur dans la base de données | 0 | N/A | 3 |
+I21 | Mon compte | Récupérer et afficher les informations du compte de l'utilisateur (nom, adresse, courriel, etc.) | 0 | monCompte | 3 |
+I22 | Modifier compte | Modifier les informations du compte de l'utilisateur dans la base de données | 0 | monCompte | 3 |
 I23 | Locations | Récupération de la liste des locations en cours de l'utilisateur | 0 | N/A | 2 |
 I24 | Retards | Récupérer et afficher la liste des films en retard que l'utilisateur a loué et n'a pas encore rapporté | 0 | N/A | 2 |
 I25 | Renouveler | Renouveler une location/reporter la date de retour depuis le compte client. Change la date de retour dans la bd. | 0 | N/A | 2 |
@@ -110,10 +110,10 @@ I35 | Modifier film | Modification d'un film existent dans la base de données |
 I36 | Modifier acteur | Modification d'un acteur existant dans la base de données | 2 | N/A | 1 |
 I37 | Suppression film | Suppression du film de la base de donnée ou changer son status uniquement. À déterminer. | 2 | N/A | 1 |
 I38 | Suppression acteur | Changer le statut de l'acteur dans la base de données, au cas où l'on ajouterait un film avec le même acteur plus tard | 2 | N/A | 1 |
-I39 | Utilisateurs | Affichage de la liste des utilisateurs actifs de la bd | 3 | N/A | 3 |
-I40 | Gestion des rôles | Changer le rôle d'un utilisateur dans la bd | 3 | N/A | 3 |
-I41 | Ajouter compte | Création de nouveaux comptes utilisateurs dans la bd | 3 | N/A | 3 |
-I42 | Supprimer compte | Supprimer des comptes utilisateurs dans la bd | 3 | N/A | 3 |
+I39 | Utilisateurs | Affichage de la liste des utilisateurs actifs de la bd | 3 | utilisateurs | 3 |
+I40 | Gestion des rôles | Changer le rôle d'un utilisateur dans la bd | 3 | editerUtilisateur | 3 |
+I41 | Ajouter compte | Création de nouveaux comptes utilisateurs dans la bd | 3 | ajoutUtilisateur | 3 |
+I42 | Supprimer compte | Supprimer des comptes utilisateurs dans la bd | 3 | editerUtilisateur | 3 |
 I43 | Notification courriel | Notifier l'utilisateur par courriel quand il valide une réservation | 0 | N/A | 1 |
-==I46== | Déconnexion | Déconnecte l'utilisateur | 0 | N/A | 1 |
-==I47== | Résilier abonnement | Modifie le booléen sur false pour membre dans la table utilisateurs | 0 | N/A | 3 |
+==I46== | Déconnexion | Déconnecte l'utilisateur | 0 | Toutes les pages sauf connexion et création de compte (côté client pas admin) | 1 |
+==I47== | Résilier abonnement | Modifie le booléen sur false pour membre dans la table utilisateurs | 0 | monCompte | 3 |
