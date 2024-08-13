@@ -77,49 +77,49 @@ C45 | Supprimer compte | Supprimer des comptes utilisateurs | 3 | editerUtilisat
 ## Fonctionnalités internes
 Code | Nom | Description | Niveau d'accreditation | Maquette(s) associée(s) | Niveau de priorité
 :---: | --- | --- | --- | :---: | --- 
-I1 | Catalogue | Récupérer la liste de tous les films actifs de la base de données | 0 | N/A | 1 |
-I2 | Description | Récupérer les détails d'un film (synopsis, acteurs, etc.) dans la base de données | 0 | N/A | 1 |
-I3 | Acteurs | Récupérer la biographie des acteurs, les films auquels ils ont participés, etc. dans la base de données | 0 | N/A | 1 |
-I4 | Ajout au panier | Ajoute un film dans le panier de l'utilisateur | 0 | N/A | 1 |
+I1 | Catalogue | Récupérer la liste de tous les films actifs de la base de données | 0 | catalogue | 1 |
+I2 | Description | Récupérer les détails d'un film (synopsis, acteurs, etc.) dans la base de données | 0 | details_film | 1 |
+I3 | Acteurs | Récupérer la biographie des acteurs, les films auquels ils ont participés, etc. dans la base de données | 0 | acteur | 1 |
+I4 | Ajout au panier | Ajoute un film dans le panier de l'utilisateur | 0 | catalogue et details_film | 1 |
 I5 | Ajouter le nouvel item du panier dans la base de données | Stocke la liste du panier dans la base de données, afin que l'utilisateur puisse continuer sa liste plus tard ou sur un autre appareil| 0 | panier | 4 |
-I6 | Recherche catalogue | Permet la recherche/filtre des éléments du catalogue par titre, genre, acteur et année | 0 | N/A | 2 |
+I6 | Recherche catalogue | Permet la recherche/filtre des éléments du catalogue par titre, genre, acteur et année | 0 | catalogue | 2 |
 I7 | Panier | Affiche la liste des films sélectionnés par l'utilisateur dans le panier à partir de la bd | 0 | panier | 1 |
-I8 | Quantité disponible | Afficher la quantité disponible de chaque film dans la page détails | 0 | N/A | 3 |
+I8 | Quantité disponible | Afficher la quantité disponible de chaque film dans la page détails | 0 | details_film | 3 |
 I9 | Réservation | Valide la réservation des films dans le panier de l’utilisateur et devient une demande de location pour les vendeurs | 0 | panier | 1 |
 I10 | Supprimer un film de la liste du panier | Supprimer le film sélectionné individuellement du champ panier de l’utilisateur de la bd | 0 | panier | 1 |
 I11 | Vider le panier | Supprime complètement le panier et tous ses éléments de la table panier | 0 | panier | 1 |
-I12 | Encryption | Encryption du mot de passe tapé dans la page connexion | 0 | N/A | 2 |
-I13 | Authentification | Comparaison des informations de la page de connexion avec les informations de l'utilisateur dans la bd | 0 | N/A | 2 |
+I12 | Encryption | Encryption du mot de passe tapé dans la page connexion | 0 | Page d'accueil | 2 |
+I13 | Authentification | Comparaison des informations de la page de connexion avec les informations de l'utilisateur dans la bd | 0 | Page d'accueil | 2 |
 I14 | Redirection | Redirection de l'utilisateur selon son rôle vers la page catalogue (client) ou une des pages d'administration (autres rôles). Recharger la page jusqu'à un maximum de trois fois si l'authentification échoue. | 0 | N/A | 2 |
 I15 | Recharger la page en cas d'échec d'authentification | Recharger la page jusqu'à un maximum de trois fois si l'authentification échoue. | 0 | N/A | 3 |
-I16 | Vérification de l'adresse de courriel | Lors de la création d'un nouveau compte, vérification préalable pour savoir si l'adresse courriel existe déjà dans la bd. Si oui, avertir l'utilisateur et recharger la page avec les données saisies | 0 | N/A | 3 |
-I17 | Création d'un compte | Encryption du mot de passe et ajout du compte dans la base de données | 0 | N/A | 2 |
-I18 | Mot de passe oublié | Envoi d'un courriel de récupération pour un mot de passe oublié avec un lien spécifique | 0 | N/A | 3 |
-I19 | Vérification du lien de mot de passe | Vérification du lien avec la bd pour valider que l'utilisateur est légitime. Redirige à la page d'accueil sinon | 0 | N/A | 4 |
-I20 | Formulaire de réinitialisation du mot de passe | Changer le mot de passe de l'utilisateur dans la bd | 0 | N/A | 2 |
+I16 | Vérification de l'adresse de courriel | Lors de la création d'un nouveau compte, vérification préalable pour savoir si l'adresse courriel existe déjà dans la bd. Si oui, avertir l'utilisateur et recharger la page avec les données saisies | 0 | Page d'accueil | 3 |
+I17 | Création d'un compte | Encryption du mot de passe et ajout du compte dans la base de données | 0 | Page d'accueil | 2 |
+I18 | Mot de passe oublié | Envoi d'un courriel de récupération pour un mot de passe oublié avec un lien spécifique | 0 | motdepasseoubliee | 3 |
+I19 | Vérification du lien de mot de passe | Vérification du lien avec la bd pour valider que l'utilisateur est légitime. Redirige à la page d'accueil sinon | 0 | motdepasseoubliee | 4 |
+I20 | Formulaire de réinitialisation du mot de passe | Changer le mot de passe de l'utilisateur dans la bd | 0 | motdepasseoubliee | 2 |
 I21 | Mon compte | Récupérer et afficher les informations du compte de l'utilisateur (nom, adresse, courriel, etc.) | 0 | monCompte | 3 |
 I22 | Modifier compte | Modifier les informations du compte de l'utilisateur dans la base de données | 0 | monCompte | 3 |
-I23 | Locations | Récupération de la liste des locations en cours de l'utilisateur | 0 | N/A | 2 |
-I24 | Retards | Récupérer et afficher la liste des films en retard que l'utilisateur a loué et n'a pas encore rapporté | 0 | N/A | 2 |
-I25 | Renouveler | Renouveler une location/reporter la date de retour depuis le compte client. Change la date de retour dans la bd. | 0 | N/A | 2 |
-I26 | Locations | Valider la possibilité (I.e. disponibilité) de la sortie temporaire d'un/des film(s) reservé(s) de l'inventaire | 1 | N/A | 1 |
-I27 | Recherche locations | Barre de recherche pour afficher les locations dans un ordre précis (titre, client, etc.) | 1 | N/A | 2 |
-I28 | Tri locations | Trier des locations par titre, date de réservation, etc. | 1 | N/A | 2 |
-I29 | Valider location | Vérification et validation de la sortie temporaire de l'inventaire des films réservés, I.e. la réservation physique est effective à partir de ce moment-là | 1 | N/A | 1 |
-I30 | Liaison film/client | Recherche dans le panier de location d'un utilisateur spécifié. | 1 | N/A | 1 |
-==I31== | Valider retour | Change la valeur de la table de location pour indiquer le retour de la location et incrémenter la quantité dans la table items | 1 | N/A | 1 |
-I32 | Filtre retard | Filtre pour afficher uniquement les films en retard | 1 | N/A | 1 |
-I33 | Ajout film | Ajout d'un film dans la base de données | 2 | N/A | 1 |
-I34 | Ajout acteur | Ajout d'un acteur dans la base de données. Validation au préalable qu'il n'existe pas déjà | 2 | N/A | 1 |
-I35 | Modifier film | Modification d'un film existent dans la base de données | 2 | N/A | 1 |
-I36 | Modifier acteur | Modification d'un acteur existant dans la base de données | 2 | N/A | 1 |
-I37 | Suppression film | Suppression du film de la base de donnée ou changer son status uniquement. À déterminer. | 2 | N/A | 1 |
-I38 | Suppression acteur | Changer le statut de l'acteur dans la base de données, au cas où l'on ajouterait un film avec le même acteur plus tard | 2 | N/A | 1 |
+I23 | Locations | Récupération de la liste des locations en cours de l'utilisateur | 0 | Locations-Client | 2 |
+~~I24~~ | Retards | Récupérer et afficher la liste des films en retard que l'utilisateur a loué et n'a pas encore rapporté | 0 | N/A | 2 |
+I25 | Renouveler | Renouveler une location/reporter la date de retour depuis le compte client. Change la date de retour dans la bd. | 0 | Locations-Client et Locations-Retours | 2 |
+I26 | Locations | Valider la possibilité (I.e. disponibilité) de la sortie temporaire d'un/des film(s) reservé(s) de l'inventaire | 1 | catalogue et details_film | 1 |
+I27 | Recherche locations | Barre de recherche pour afficher les locations dans un ordre précis (titre, client, etc.) | 1 | Locations-Client et Locations-Retours | 2 |
+I28 | Tri locations | Trier des locations par titre, date de réservation, etc. | 1 | Locations-Client et Locations-Retours | 2 |
+I29 | Valider location | Vérification et validation de la sortie temporaire de l'inventaire des films réservés, I.e. la réservation physique est effective à partir de ce moment-là | 1 | Locations-Retours | 1 |
+I30 | Liaison film/client | Recherche dans le panier de location d'un utilisateur spécifié | 1 | panier | 1 |
+==I31== | Valider retour | Change la valeur de la table de location pour indiquer le retour de la location et incrémenter la quantité dans la table items | 1 | Locations-Retours | 1 |
+I32 | Filtre retard | Filtre pour afficher uniquement les films en retard | 1 | Locations-Client et Locations-Retours | 1 |
+I33 | Ajout film | Ajout d'un film dans la base de données | 2 | ajout-film | 1 |
+I34 | Ajout acteur | Ajout d'un acteur dans la base de données. Validation au préalable qu'il n'existe pas déjà | 2 | ajoutacteur | 1 |
+I35 | Modifier film | Modification d'un film existent dans la base de données | 2 | details_film | 1 |
+I36 | Modifier acteur | Modification d'un acteur existant dans la base de données | 2 | acteur | 1 |
+I37 | Suppression film | Suppression du film de la base de donnée ou changer son status uniquement. À déterminer. | 2 | modifier-film | 1 |
+I38 | Suppression acteur | Changer le statut de l'acteur dans la base de données, au cas où l'on ajouterait un film avec le même acteur plus tard | 2 | modifieracteur | 1 |
 I39 | Utilisateurs | Affichage de la liste des utilisateurs actifs de la bd | 3 | utilisateurs | 3 |
 I40 | Gestion des rôles | Changer le rôle d'un utilisateur dans la bd | 3 | editerUtilisateur | 3 |
 I41 | Ajouter compte | Création de nouveaux comptes utilisateurs dans la bd | 3 | ajoutUtilisateur | 3 |
 I42 | Supprimer compte | Supprimer des comptes utilisateurs dans la bd | 3 | editerUtilisateur | 3 |
-I43 | Notification courriel | Notifier l'utilisateur par courriel quand il valide une réservation | 0 | N/A | 1 |
+I43 | Notification courriel | Notifier l'utilisateur par courriel quand il valide une réservation | 0 | panier | 1 |
 ==I46== | Déconnexion | Déconnecte l'utilisateur | 0 | Toutes les pages sauf page d'accueil et motdepasseoubliee | 1 |
 ==I47== | Résilier abonnement | Modifie le booléen sur false pour membre dans la table utilisateurs | 0 | monCompte | 3 |
 ==I48== | Supprimer les locations non-réclamés | À tous les jours à minuit, supprimer les réservations non-réclamées et remettre les items en inventaire | 2 | N/A | 2 |
