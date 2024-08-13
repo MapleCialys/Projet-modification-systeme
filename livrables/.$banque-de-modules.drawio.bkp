@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.5 Chrome/126.0.6478.183 Electron/31.3.0 Safari/537.36" version="24.7.5">
   <diagram name="Page-1" id="BY2GdVJ9Qx3QBZno3a6H">
-    <mxGraphModel dx="2650" dy="3321" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+    <mxGraphModel dx="3034" dy="3536" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -478,15 +478,6 @@
         </mxCell>
         <mxCell id="-8HZ4sUAJwUP1H8HBxe7-17" value="C9" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.text.callout;linkText=;textSize=17;textColor=#666666;callDir=NE;callStyle=line;fontSize=17;align=right;verticalAlign=top;strokeColor=#005700;fillColor=#008a00;fontColor=#ffffff;container=0;" parent="-8HZ4sUAJwUP1H8HBxe7-2" vertex="1">
           <mxGeometry x="780" width="160" height="230" as="geometry" />
-        </mxCell>
-        <mxCell id="ZiuEi9TxqFwauqqhuEsh-7" value="" style="strokeColor=#FFFFFF;verticalLabelPosition=bottom;shadow=0;dashed=0;verticalAlign=top;strokeWidth=2;html=1;shape=mxgraph.mockup.misc.trashcanIcon;fillColor=#a20025;fontColor=#ffffff;" parent="1" vertex="1">
-          <mxGeometry x="-870" y="-973" width="50" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="ZiuEi9TxqFwauqqhuEsh-10" value="" style="html=1;dashed=0;aspect=fixed;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.gmdl.calendar;strokeColor=none;fillColor=#737373;shadow=0;sketch=0;" parent="1" vertex="1">
-          <mxGeometry x="-1015" y="-1297.5" width="50" height="50" as="geometry" />
-        </mxCell>
-        <mxCell id="K6PE6a03c4XqH3noSUPp-1" value="" style="strokeColor=#FFFFFF;verticalLabelPosition=bottom;shadow=0;dashed=0;verticalAlign=top;strokeWidth=2;html=1;shape=mxgraph.mockup.misc.editIcon;fillColor=#e3c800;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="-945" y="-973" width="50" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
