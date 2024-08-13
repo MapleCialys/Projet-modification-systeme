@@ -37,7 +37,7 @@ C21 | Renouveler | Renouveler une location/reporter la date de retour depuis le 
 C22 | Locations | Tableau/liste des demandes de locations | 1 | Locations-Retours | 1 |
 C23 | Recherche locations | Barre de recherche pour les locations (titre, client, etc.) | 1 | Locations-Client et Locations-Retours | 2 |
 C24 | Tri locations | Trier les locations par titre, date de réservation, etc. | 1 | Locations-Client et Locations-Retours | 2 |
-~~C25~~ | Valider location | Case à cocher et bouton soumettre pour valider la sortie temporaire de l'inventaire des films réservés | 1 | N/A | 1 |
+C25 | Valider location | Case à cocher et bouton soumettre pour valider la sortie temporaire de l'inventaire des films réservés | 1 | N/A | 1 |
 C26 | Liaison film/client | Lier un client à un panier des films pour les locations faites en magasin | 1 | panier | 2 |
 ~~C27~~ | Retours | Liste de films sortis de l'inventaire | 1 | N/A | 1 |
 C28 | Valider retour | Bouton "Confirmer" pour valider le retour en inventaire des films ramenés par le client | 1 | Locations-Retours | 1 |
@@ -72,6 +72,7 @@ C45 | Supprimer compte | Supprimer des comptes utilisateurs | 3 | editerUtilisat
 ==C57== | Valider résiliation abonnement | Bouton pour valider la résiliation son abonnement | 0 | monCompte | 3 |
 ==C58== | Supprimer items panier | Bouton pour retirer plusieurs les films sélectionnés dans le panier de l’utilisateur | 0 | panier | 2 |
 ==C59== | Valider vider le panier | Bouton de confirmation pour vider le panier de l'utilisateur | 0 | panier | 1 |
+==C60== | Confirmation de suppression de film | Popup pour confirmer la suppression d'un film de la base de données | 2 | modifier-film | 1 |
 
 
 ## Fonctionnalités internes
