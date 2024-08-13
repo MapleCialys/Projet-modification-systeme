@@ -37,10 +37,10 @@ C21 | Renouveler | Renouveler une location/reporter la date de retour depuis le 
 C22 | Locations | Tableau/liste des demandes de locations | 1 | N/A | 1 |
 C23 | Recherche locations | Barre de recherche pour les locations (titre, client, etc.) | 1 | N/A | 2 |
 C24 | Tri locations | Trier les locations par titre, date de réservation, etc. | 1 | N/A | 2 |
-C25 | Valider location | Case à cocher et bouton soumettre pour valider la sortie temporaire de l'inventaire des films réservés | 1 | N/A | 1 |
+~~C25~~ | Valider location | Case à cocher et bouton soumettre pour valider la sortie temporaire de l'inventaire des films réservés | 1 | N/A | 1 |
 C26 | Liaison film/client | Lier un film à un client depuis le catalogue ou la page du flim pour les locations faites en magasin | 1 | N/A | 1 |
 C27 | Retours | Liste de films sortis de l'inventaire | 1 | N/A | 1 |
-C28 | Valider retour | Case à cocher + bouton soumettre pour valider le retour en inventaire des films ramenés par le client | 1 | N/A | 1 |
+C28 | Valider retour | Bouton "Confirmer" pour valider le retour en inventaire des films ramenés par le client | 1 | N/A | 1 |
 C29 | Filtre retard | Filtre pour afficher uniquement les films en retard | 1 | N/A | 1 |
 C30 | Ajout film | Formulaire pour ajouter des films dans la base de données | 2 | ajout-film | 1 |
 C31 | Valider ajout/modification film | Bouton soumettre le formulaire pour ajouter ou modifier des films dans la base de données | 2 | ajout-film et modifier-film | 1 |
@@ -67,7 +67,7 @@ C45 | Supprimer compte | Supprimer des comptes utilisateurs | 3 | editerUtilisat
 ==C52== | Triage utilisateurs | Bouton de triage pour la liste des utilisateurs | 3 | utilisateurs | 3 |
 ==C53== | Recherche utilisateurs | Barre de recherche pour la liste des utilisateurs | 3 | utilisateurs | 3 |
 ==C54== | Résilier abonnement | Bouton pour résiler son abonnement (ne plus être membre) | 0 | monCompte | 3 |
-C55 | Délier film et acteur | Lien texte pour supprimer le lien entre un acteur et un film en modification | 2 | ajout-film et modifier-film | 1 |
+==C55== | Délier film et acteur | Lien texte pour supprimer le lien entre un acteur et un film en modification | 2 | ajout-film et modifier-film | 1 |
 
 
 ## Fonctionnalités internes
@@ -103,7 +103,7 @@ I27 | Recherche locations | Barre de recherche pour afficher les locations dans 
 I28 | Tri locations | Trier des locations par titre, date de réservation, etc. | 1 | N/A | 2 |
 I29 | Valider location | Vérification et validation de la sortie temporaire de l'inventaire des films réservés, I.e. la réservation physique est effective à partir de ce moment-là | 1 | N/A | 1 |
 I30 | Liaison film/client | Recherche dans le panier de location d'un utilisateur spécifié. | 1 | N/A | 1 |
-I31 | Valider retour | Change la valeur de la table de location pour indiquer le retour de la location | 1 | N/A | 1 |
+==I31== | Valider retour | Change la valeur de la table de location pour indiquer le retour de la location et incrémenter la quantité dans la table items | 1 | N/A | 1 |
 I32 | Filtre retard | Filtre pour afficher uniquement les films en retard | 1 | N/A | 1 |
 I33 | Ajout film | Ajout d'un film dans la base de données | 2 | N/A | 1 |
 I34 | Ajout acteur | Ajout d'un acteur dans la base de données. Validation au préalable qu'il n'existe pas déjà | 2 | N/A | 1 |
@@ -118,3 +118,4 @@ I42 | Supprimer compte | Supprimer des comptes utilisateurs dans la bd | 3 | edi
 I43 | Notification courriel | Notifier l'utilisateur par courriel quand il valide une réservation | 0 | N/A | 1 |
 ==I46== | Déconnexion | Déconnecte l'utilisateur | 0 | Toutes les pages sauf connexion et création de compte (côté client pas admin) | 1 |
 ==I47== | Résilier abonnement | Modifie le booléen sur false pour membre dans la table utilisateurs | 0 | monCompte | 3 |
+==I48== | Supprimer les paniers non-réclamés | À tous les jours à minuit, supprimer les réservations non-réclamées et remettre les items en inventaire | 2 | N/A | 2 |
