@@ -31,38 +31,38 @@ C15 | Création d'un compte | Création d'un compte utilisateur | 0 | Page d'acc
 C16 | Mot de passe oublié | Bouton de récupération du mot de passe d'un utilisateur ayant un compte | 0 | motdepasseoubliee | 3 |
 C17 | Mon compte | Visualiser ses informations d'utilisateur (nom, adresse, courriel, etc.) | 0 | monCompte | 3 |
 C18 | Modifier compte | Modifier ses informations d'utilisateur | 0 | monCompte et editerUtilisateur | 3 |
-C19 | Locations | Liste des locations en cours de l'utilisateur | 0 | N/A | 2 |
-C20 | Retards | Liste des films en retard de l'utilisateur | 0 | N/A | 2 |
-C21 | Renouveler | Renouveler une location/reporter la date de retour depuis le compte client | 0 | N/A | 2 |
-C22 | Locations | Tableau/liste des demandes de locations | 1 | N/A | 1 |
-C23 | Recherche locations | Barre de recherche pour les locations (titre, client, etc.) | 1 | N/A | 2 |
-C24 | Tri locations | Trier les locations par titre, date de réservation, etc. | 1 | N/A | 2 |
+C19 | Locations | Liste des locations en cours de l'utilisateur | 0 | Locations-Client | 2 |
+~~C20~~ | Retards | Liste des films en retard de l'utilisateur | 0 | N/A | 2 |
+C21 | Renouveler | Renouveler une location/reporter la date de retour depuis le compte client | 0 | Locations-Client et Locations-Retours | 2 |
+C22 | Locations | Tableau/liste des demandes de locations | 1 | Locations-Retours | 1 |
+C23 | Recherche locations | Barre de recherche pour les locations (titre, client, etc.) | 1 | Locations-Client et Locations-Retours | 2 |
+C24 | Tri locations | Trier les locations par titre, date de réservation, etc. | 1 | Locations-Client et Locations-Retours | 2 |
 ~~C25~~ | Valider location | Case à cocher et bouton soumettre pour valider la sortie temporaire de l'inventaire des films réservés | 1 | N/A | 1 |
 C26 | Liaison film/client | Lier un client à un panier des films pour les locations faites en magasin | 1 | panier | 2 |
 ~~C27~~ | Retours | Liste de films sortis de l'inventaire | 1 | N/A | 1 |
-C28 | Valider retour | Bouton "Confirmer" pour valider le retour en inventaire des films ramenés par le client | 1 | N/A | 1 |
-C29 | Filtre retard | Filtre pour afficher uniquement les films en retard | 1 | N/A | 1 |
+C28 | Valider retour | Bouton "Confirmer" pour valider le retour en inventaire des films ramenés par le client | 1 | Locations-Retours | 1 |
+C29 | Filtre retard | Filtre pour afficher uniquement les films en retard | 1 | Locations-Client et Locations-Retours | 1 |
 C30 | Ajout film | Formulaire pour ajouter des films dans la base de données | 2 | ajout-film | 1 |
 C31 | Valider ajout/modification film | Bouton soumettre le formulaire pour ajouter ou modifier des films dans la base de données | 2 | ajout-film et modifier-film | 1 |
-C32 | Ajout acteur | Formulaire pour ajouter des acteurs dans la base de données | 2 | N/A | 1 |
-C33 | Valider acteur | Bouton soumettre le formulaire pour ajouter des acteur dans la base de données | 2 | N/A | 1 |
+C32 | Ajout acteur | Formulaire pour ajouter des acteurs dans la base de données | 2 | ajoutacteur | 1 |
+C33 | Valider acteur | Bouton soumettre le formulaire pour ajouter des acteur dans la base de données | 2 | ajoutacteur | 1 |
 C34 | Modifier film | Formulaire pour modifier des films de la base de données | 2 | details_film | 1 |
-C35 | Valider modification film | Bouton soumettre le formulaire pour modifier des films de la base de données | 2 | N/A | 1 |
-C36 | Modifier acteur | Formulaire pour modifier des acteurs de la base de données | 2 | N/A | 1 |
-C37 | Valider modifier acteur | Bouton soumettre le formulaire pour modifier des acteur de la base de données | 2 | N/A | 1 |
+C35 | Valider modification film | Bouton soumettre le formulaire pour modifier des films de la base de données | 2 | modifier-film | 1 |
+C36 | Modifier acteur | Formulaire pour modifier des acteurs de la base de données | 2 | acteur | 1 |
+C37 | Valider modifier acteur | Bouton soumettre le formulaire pour modifier des acteur de la base de données | 2 | modifieracteur | 1 |
 C38 | Suppression film | Bouton pour supprimer le film de la base de données | 2 | modifier-film | 1 |
 C39 | Lier film et acteur | Bouton pour ajouter un acteur au film en modification | 2 | ajout-film et modifier-film | 1 |
-C40 | Suppression acteur | Formulaire pour supprimer des acteurs de la base de données | 2 | N/A | 1 |
-C41 | Valider suppression acteur | Bouton soumettre le formulaire pour supprimer des acteurs de la base de données | 2 | N/A | 1 |
+C40 | Suppression acteur | Formulaire pour supprimer des acteurs de la base de données | 2 | modifieracteur | 1 |
+C41 | Valider suppression acteur | Bouton soumettre le formulaire pour supprimer des acteurs de la base de données | 2 | modifieracteur | 1 |
 C42 | Utilisateurs | Liste des utilisateurs | 3 | utilisateurs | 3 |
 C43 | Gestion des rôles | Changer le rôle d'un utilisateur | 3 | editerUtilisateur | 3 |
 C44 | Ajouter compte | Création de nouveaux comptes utilisateurs | 3 | ajoutUtilisateur | 3 |
 C45 | Supprimer compte | Supprimer des comptes utilisateurs | 3 | editerUtilisateur | 3 |
 ==C46== | Déconnexion | Bouton de déconnexion | 0 | Toutes les pages sauf page d'accueil et motdepasseoubliee | 1 |
-==C47== | Recherche acteur | Barre de recherche pour les acteurs | 0 | N/A | 3 |
-==C48== | Description acteur | Lien vers la page de description d'un acteur | 0 | N/A | 1 |
-==C49== | Filtres acteur | Filtre pour la pages des acteurs | 0 | N/A | 3 |
-==C50== | Triage acteur | Bouton de triage pour les pages catalogue et acteurs | 0 | N/A | 3 |
+==C47== | Recherche acteur | Barre de recherche pour les acteurs | 0 | acteurs | 3 |
+==C48== | Description acteur | Lien vers la page de description d'un acteur | 0 | acteurs | 1 |
+==C49== | Filtres acteur | Filtre pour la pages des acteurs | 0 | acteurs | 3 |
+==C50== | Triage acteur | Bouton de triage pour les pages catalogue et acteurs | 0 | acteurs | 3 |
 ==C51== | Filtres utilisateurs | Filtre pour la liste des utilisateurs | 3 | utilisateurs | 3 |
 ==C52== | Triage utilisateurs | Bouton de triage pour la liste des utilisateurs | 3 | utilisateurs | 3 |
 ==C53== | Recherche utilisateurs | Barre de recherche pour la liste des utilisateurs | 3 | utilisateurs | 3 |
