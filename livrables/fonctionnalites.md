@@ -67,7 +67,7 @@ C45 | Supprimer compte | Supprimer des comptes utilisateurs | 3 | editerUtilisat
 ==C52== | Triage utilisateurs | Bouton de triage pour la liste des utilisateurs | 3 | utilisateurs | 3 |
 ==C53== | Recherche utilisateurs | Barre de recherche pour la liste des utilisateurs | 3 | utilisateurs | 3 |
 ==C54== | Résilier abonnement | Bouton pour résiler son abonnement (ne plus être membre) | 0 | monCompte | 3 |
-C55 | Délier film et acteur | Lien texte pour supprimer le lien entre un acteur et un film en modification | 2 | ajout-film et modifier-film | 1 |
+==C55== | Délier film et acteur | Lien texte pour supprimer le lien entre un acteur et un film en modification | 2 | ajout-film et modifier-film | 1 |
 
 
 ## Fonctionnalités internes
