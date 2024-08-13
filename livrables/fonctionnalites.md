@@ -39,7 +39,7 @@ C23 | Recherche locations | Barre de recherche pour les locations (titre, client
 C24 | Tri locations | Trier les locations par titre, date de réservation, etc. | 1 | N/A | 2 |
 ~~C25~~ | Valider location | Case à cocher et bouton soumettre pour valider la sortie temporaire de l'inventaire des films réservés | 1 | N/A | 1 |
 C26 | Liaison film/client | Lier un film à un client depuis le catalogue ou la page du flim pour les locations faites en magasin | 1 | N/A | 1 |
-C27 | Retours | Liste de films sortis de l'inventaire | 1 | N/A | 1 |
+~~C27~~ | Retours | Liste de films sortis de l'inventaire | 1 | N/A | 1 |
 C28 | Valider retour | Bouton "Confirmer" pour valider le retour en inventaire des films ramenés par le client | 1 | N/A | 1 |
 C29 | Filtre retard | Filtre pour afficher uniquement les films en retard | 1 | N/A | 1 |
 C30 | Ajout film | Formulaire pour ajouter des films dans la base de données | 2 | ajout-film | 1 |
