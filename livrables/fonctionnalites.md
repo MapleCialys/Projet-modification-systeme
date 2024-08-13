@@ -23,9 +23,9 @@ C7 | Bande annonce | Vidéo bande annonce du film avec bouton de lecture ou muet
 C8 | Retour | Bouton de retour vers le catalogue ou une recherche effectuée | 0 | details_film | 2 |
 C9 | Panier | Tableau/liste des films dans le panier | 0 | N/A | 1 |
 C10 | Quantité disponible | Afficher la quantité disponible de chaque film dans la page détails | 0 | details_film | 3 |
-C11 | Réservation | Bouton pour réserver les films dans le panier de l’utilisateur | 0 | N/A | 1 |
-C12 | Supprimer | Boutons pour retirer les films individuellement dans le panier de l’utilisateur | 0 | N/A | 1 |
-C13 | Vider le panier | Bouton pour vider le panier de l'utilisateur | 0 | N/A | 1 |
+C11 | Réservation | Bouton pour réserver les films dans le panier de l’utilisateur | 0 | panier | 1 |
+C12 | Supprimer | Boutons pour retirer les films individuellement dans le panier de l’utilisateur | 0 | panier | 1 |
+C13 | Vider le panier | Bouton pour vider le panier de l'utilisateur | 0 | panier | 1 |
 C14 | Authentification | Authentification d'un utilisateur | 0 | N/A | 2 |
 C15 | Création d'un compte | Création d'un compte utilisateur | 0 | N/A | 2 |
 C16 | Mot de passe oublié | Bouton de récupération du mot de passe d'un utilisateur ayant un compte | 0 | N/A | 3 |
@@ -58,7 +58,7 @@ C42 | Utilisateurs | Liste des utilisateurs | 3 | utilisateurs | 3 |
 C43 | Gestion des rôles | Changer le rôle d'un utilisateur | 3 | editerUtilisateur | 3 |
 C44 | Ajouter compte | Création de nouveaux comptes utilisateurs | 3 | ajoutUtilisateur | 3 |
 C45 | Supprimer compte | Supprimer des comptes utilisateurs | 3 | editerUtilisateur | 3 |
-==C46== | Déconnexion | Bouton de déconnexion | 0 | Toutes les pages sauf connexion et création de compte (côté client pas admin) | 1 |
+==C46== | Déconnexion | Bouton de déconnexion | 0 | Toutes les pages sauf page d'accueil | 1 |
 ==C47== | Recherche acteur | Barre de recherche pour les acteurs | 0 | N/A | 3 |
 ==C48== | Description acteur | Lien vers la page de description d'un acteur | 0 | N/A | 1 |
 ==C49== | Filtres acteur | Filtre pour la pages des acteurs | 0 | N/A | 3 |
@@ -68,6 +68,8 @@ C45 | Supprimer compte | Supprimer des comptes utilisateurs | 3 | editerUtilisat
 ==C53== | Recherche utilisateurs | Barre de recherche pour la liste des utilisateurs | 3 | utilisateurs | 3 |
 ==C54== | Résilier abonnement | Bouton pour résiler son abonnement (ne plus être membre) | 0 | monCompte | 3 |
 ==C55== | Délier film et acteur | Lien texte pour supprimer le lien entre un acteur et un film en modification | 2 | ajout-film et modifier-film | 1 |
+==C56== | Valider suppression compte | Bouton de confirmation pour supprimer des comptes utilisateurs | 3 | editerUtilisateur | 3 |
+==C57== | Valider résiliation abonnement | Bouton pour valider la résiliation son abonnement | 0 | monCompte | 3 |
 
 
 ## Fonctionnalités internes
@@ -77,13 +79,13 @@ I1 | Catalogue | Récupérer la liste de tous les films actifs de la base de don
 I2 | Description | Récupérer les détails d'un film (synopsis, acteurs, etc.) dans la base de données | 0 | N/A | 1 |
 I3 | Acteurs | Récupérer la biographie des acteurs, les films auquels ils ont participés, etc. dans la base de données | 0 | N/A | 1 |
 I4 | Ajout au panier | Ajoute un film dans le panier de l'utilisateur | 0 | N/A | 1 |
-I5 | Ajouter le nouvel item du panier dans la base de données | Stocke la liste du panier dans la base de données, afin que l'utilisateur puisse continuer sa liste plus tard ou sur un autre appareil| 0 | N/A | 4 |
+I5 | Ajouter le nouvel item du panier dans la base de données | Stocke la liste du panier dans la base de données, afin que l'utilisateur puisse continuer sa liste plus tard ou sur un autre appareil| 0 | panier | 4 |
 I6 | Recherche catalogue | Permet la recherche/filtre des éléments du catalogue par titre, genre, acteur et année | 0 | N/A | 2 |
-I7 | Panier | Affiche la liste des films sélectionnés par l'utilisateur dans le panier à partir de la bd | 0 | N/A | 1 |
-I8 | Quantité disponible | Afficher la quantité disponible de chaque film dans le panier | 0 | N/A | 3 |
-I9 | Réservation | Valide la réservation des films dans le panier de l’utilisateur et devient une demande de location pour les vendeurs | 0 | N/A | 1 |
-I10 | Supprimer un film de la liste de location | Supprimer le film sélectionné individuellement du champ panier de l’utilisateur de la bd | 0 | N/A | 1 |
-I11 | Vider le panier | Supprime complètement le panier et tous ses éléments de la table panier | 0 | N/A | 1 |
+I7 | Panier | Affiche la liste des films sélectionnés par l'utilisateur dans le panier à partir de la bd | 0 | panier | 1 |
+I8 | Quantité disponible | Afficher la quantité disponible de chaque film dans la page détails | 0 | N/A | 3 |
+I9 | Réservation | Valide la réservation des films dans le panier de l’utilisateur et devient une demande de location pour les vendeurs | 0 | panier | 1 |
+I10 | Supprimer un film de la liste du panier | Supprimer le film sélectionné individuellement du champ panier de l’utilisateur de la bd | 0 | panier | 1 |
+I11 | Vider le panier | Supprime complètement le panier et tous ses éléments de la table panier | 0 | panier | 1 |
 I12 | Encryption | Encryption du mot de passe tapé dans la page connexion | 0 | N/A | 2 |
 I13 | Authentification | Comparaison des informations de la page de connexion avec les informations de l'utilisateur dans la bd | 0 | N/A | 2 |
 I14 | Redirection | Redirection de l'utilisateur selon son rôle vers la page catalogue (client) ou une des pages d'administration (autres rôles). Recharger la page jusqu'à un maximum de trois fois si l'authentification échoue. | 0 | N/A | 2 |
@@ -116,6 +118,6 @@ I40 | Gestion des rôles | Changer le rôle d'un utilisateur dans la bd | 3 | ed
 I41 | Ajouter compte | Création de nouveaux comptes utilisateurs dans la bd | 3 | ajoutUtilisateur | 3 |
 I42 | Supprimer compte | Supprimer des comptes utilisateurs dans la bd | 3 | editerUtilisateur | 3 |
 I43 | Notification courriel | Notifier l'utilisateur par courriel quand il valide une réservation | 0 | N/A | 1 |
-==I46== | Déconnexion | Déconnecte l'utilisateur | 0 | Toutes les pages sauf connexion et création de compte (côté client pas admin) | 1 |
+==I46== | Déconnexion | Déconnecte l'utilisateur | 0 | Toutes les pages sauf page d'accueil | 1 |
 ==I47== | Résilier abonnement | Modifie le booléen sur false pour membre dans la table utilisateurs | 0 | monCompte | 3 |
-==I48== | Supprimer les paniers non-réclamés | À tous les jours à minuit, supprimer les réservations non-réclamées et remettre les items en inventaire | 2 | N/A | 2 |
+==I48== | Supprimer les locations non-réclamés | À tous les jours à minuit, supprimer les réservations non-réclamées et remettre les items en inventaire | 2 | N/A | 2 |
