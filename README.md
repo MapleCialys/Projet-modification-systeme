@@ -30,4 +30,7 @@ L'équipe est copmposée de
         cd devflix
         npm install
         npm run dev -- --open
+        npm install --save sequelize
+        npm install --save sqlite3
+        npm i bcrypt
     ```
