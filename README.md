@@ -29,8 +29,8 @@ L'équipe est copmposée de
         npm create svelte@latest devflix
         cd devflix
         npm install
-        npm run dev -- --open
         npm install --save sequelize
         npm install --save sqlite3
         npm i bcrypt
+        npm run dev -- --open
     ```
