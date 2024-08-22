@@ -14,7 +14,7 @@ export const actions = {
             return { success: true }
         }catch(error){
             console.log("Erreur lors de la connexion : ", error);
-            return fail(401, {success: false, message: error});
+            return fail(401, error);
         }
     }
 }

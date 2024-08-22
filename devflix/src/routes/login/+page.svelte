@@ -12,17 +12,18 @@
         });
 
         const result = await response.json();
+        console.log(result);
 
-        if (!result.success)
-            alert(result.message);
+        if (result.type == 'failure')
+            alert(result.data); // a changer pour mettre le message d'erreur sur la page
         else
-            alert('gg ma gueule');
+            alert('gg ma gueule'); //a changer pour la redirection
     }
 </script>
 
 <h1>Login</h1>
 
-<form on:submit|preventDefault={handleSubmit} method="POST" action="?/login">
+<form on:submit|preventDefault={handleSubmit}>
 
     <label for="nom">Nom</label>
     <input type="text" name="nom" id="nom">
