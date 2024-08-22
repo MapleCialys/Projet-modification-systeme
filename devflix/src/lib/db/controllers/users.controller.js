@@ -1,6 +1,7 @@
 import bcrypt from 'bcrypt';
 import { Users } from "../models/users.model";
 import { Roles } from "../models/roles.model";
+import { Sessions } from "../models/sessions.model";
 
 
 /**
@@ -13,18 +14,17 @@ import { Roles } from "../models/roles.model";
  * @param {String} p_password
  */
 export async function newUser(p_nom, p_prenom, p_role_id, p_password){
-    Users.create({
+   try{
+     resultat = await Users.create({
         nom: p_nom,
         prenom: p_prenom,
         role_id: p_role_id,
         password: p_password
-    })
-    .then(resultat => {
-        return resultat.dataValues;
-    })
-    .catch((error)=>{
-        throw error;
     });
+    return resultat.dataValues;
+    }catch(error){
+        throw error;
+    }
 }
 
 /**
