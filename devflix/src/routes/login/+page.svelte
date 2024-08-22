@@ -1,6 +1,28 @@
+<script>
+    let message = '';
+
+    async function handleSubmit(event)
+    {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+
+        const response = await fetch('?/login', {
+            method: 'POST',
+            body: formData
+        });
+
+        const result = await response.json();
+
+        if (!result.success)
+            alert(result.message);
+        else
+            alert('gg ma gueule');
+    }
+</script>
+
 <h1>Login</h1>
 
-<form method="POST" action="?/login">
+<form on:submit|preventDefault={handleSubmit} method="POST" action="?/login">
 
     <label for="nom">Nom</label>
     <input type="text" name="nom" id="nom">
