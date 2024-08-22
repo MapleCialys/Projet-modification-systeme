@@ -15,7 +15,7 @@ import { Sessions } from "../models/sessions.model";
  */
 export async function newUser(p_nom, p_prenom, p_role_id, p_password){
    try{
-     resultat = await Users.create({
+     const resultat = await Users.create({
         nom: p_nom,
         prenom: p_prenom,
         role_id: p_role_id,
