@@ -31,7 +31,7 @@
                             <h2 class="title is-4">{item.nom}</h2>
                             <p class="subtitle is-6">{formatDate(item.date)}</p>
                             <p>Quantité disponible : {item.quantite_disponible}</p>
-                            <a href="./panier" class="button is-primary">Ajouter au panier</a>
+                            <a href="./" class="button is-primary">Ajouter au panier</a>
                         </div>
                     </div>
                 </div>

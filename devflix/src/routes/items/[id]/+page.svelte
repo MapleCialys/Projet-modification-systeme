@@ -19,6 +19,8 @@
         <p>Date de sortie : {formatDate(item.date)}</p>
         <p>Description : {item.description}</p>
         <p>Quantite : {item.quantite_disponible}</p>
+
+        <a href="./" class="button is-primary">Ajouter au panier</a>
     </div>
 
 </div>
