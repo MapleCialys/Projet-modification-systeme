@@ -1,4 +1,6 @@
 <script>
+	import Logout from "../../lib/component/logout.svelte";
+
 
     export let data;
 
@@ -9,6 +11,8 @@
 </script>
 
 <h1>Items</h1>
+
+<Logout />
 
 {#each items as item}
     <h2>Item : {item.id}</h2>
