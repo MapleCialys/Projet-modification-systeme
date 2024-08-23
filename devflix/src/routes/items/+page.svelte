@@ -6,12 +6,9 @@
 
     console.log(items)
 
-    import H1Title from '../../lib/components/h1Title.svelte';
+    import {formatDate} from '../../lib/index.js';
 
-    function formatDate(dateString) {
-        const options = { day: '2-digit', month: 'long', year: 'numeric' };
-        return new Date(dateString).toLocaleDateString('fr-FR', options);
-    }
+    import H1Title from '../../lib/components/h1Title.svelte';
 
 </script>
 
