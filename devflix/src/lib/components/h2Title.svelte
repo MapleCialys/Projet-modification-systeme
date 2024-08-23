@@ -3,5 +3,5 @@
 </script>
 
 <div class="block">
-    <h2 class="subtitle">{title}</h2>
+    <h2 class="title">{title}</h2>
 </div>
