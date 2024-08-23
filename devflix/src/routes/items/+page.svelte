@@ -8,12 +8,32 @@
 
 </script>
 
-<h1>Items</h1>
+<div class="block">
+    <div class="block">
+        <h1 class="title">Catalogue de films</h1>
+    </div>
 
-{#each items as item}
-    <h2>Item : {item.id}</h2>
-    <p>{item.nom}</p>
-    <p>{item.description}</p>
-    <p>{item.quantite}</p>
-    <a href="./items/{item.id}">Lien</a>
-{/each}
+    <div class="grid is-col-min-9">
+        {#each items as item}
+        <div class="cell">
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-5by3">
+                        <a href="./items/{item.id}">
+                            <img src="{item.image_item}" alt="{item.nom}"/>
+                        </a>
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <div class="content">
+                        <h2 class="title is-4">{item.nom}</h2>
+                        <p class="subtitle is-6">{item.date}</p>
+                        <p>{item.quantite_disponible}</p>
+                        <a href="/" class="button is-primary">Ajouter au panier</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {/each}
+    </div>
+</div>
