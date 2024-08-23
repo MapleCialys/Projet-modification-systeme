@@ -1,9 +1,9 @@
 <script>
-    import Title from "../../../lib/components/title.svelte";
+    import H1Title from '../../lib/components/h1Title.svelte';
     import ButtonLight from "../../../lib/components/buttonLight.svelte";
 </script>
 
-<Title title={"Ajouter un film"}></Title>
+<H1Title title={"Ajouter un film"}></H1Title>
 
 <form method="POST" action="?/new">
     <div class="field">
