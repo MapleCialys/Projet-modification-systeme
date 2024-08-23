@@ -19,7 +19,7 @@ export async function newItem(p_nom, p_description, p_image_item, p_bande_annonc
         imgage: p_image_item,
         bande_annonce: p_bande_annonce,
         date: p_date,
-        quantite: p_quantite_disponible
+        quantite_disponible: p_quantite_disponible
     })
     .then(resultat => {
         return resultat.dataValues;
