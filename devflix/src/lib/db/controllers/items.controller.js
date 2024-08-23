@@ -16,7 +16,7 @@ export async function newItem(p_nom, p_description, p_image_item, p_bande_annonc
     Items.create({
         nom: p_nom,
         description: p_description,
-        imgage: p_image_item,
+        image_item: p_image_item,
         bande_annonce: p_bande_annonce,
         date: p_date,
         quantite_disponible: p_quantite_disponible
