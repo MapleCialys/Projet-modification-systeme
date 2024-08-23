@@ -1,23 +1,53 @@
-<h1 class="title">Ajouter un film</h1>
+<script>
+    import Title from "../../../lib/components/title.svelte";
+    import ButtonLight from "../../../lib/components/buttonLight.svelte";
+</script>
+
+<Title title={"Ajouter un film"}></Title>
 
 <form method="POST" action="?/new">
-    <label for="nom">Nom</label>
-    <input type="text" name="nom" id="nom" required>
+    <div class="field">
+        <label class="label" for="nom">Titre du film</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="La guerre des étoiles" name="nom" id="nom" required>
+        </div>
+    </div>
 
-    <label for="description">Description</label>
-    <input type="text" name="description" id="description" required>
+    <div class="field">
+        <label class="label" for="bande_annonce">Lien vers la bande annonce</label>
+        <div class="control">
+          <input class="input" type="url" placeholder="YouTube ou local" name="bande_annonce" id="bande_annonce">
+        </div>
+    </div>
 
-    <label for="image_item"></label>
-    <input type="text" name="image_item" id="image_item">
+    <div class="field">
+        <label class="label" for="date">Date de sortie</label>
+        <div class="control">
+          <input class="input" type="date" placeholder="AAA-MM-JJ" name="date" id="date">
+        </div>
+    </div>
 
-    <label for="bande_annonce"></label>
-    <input type="url" name="bande_annonce" id="bande_annonce">
+    <div class="field">
+        <label class="label" for="image_item">Image du film</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="img file" name="image_item" id="image_item">
+        </div>
+    </div>
 
-    <label for="date"></label>
-    <input type="date" name="date" id="date">
+    <div class="field">
+        <label class="label" for="quantite_disponible">Quantité disponible</label>
+        <div class="control">
+          <input class="input" type="number" min=0 name="quantite_disponible" id="quantite_disponible" required>
+        </div>
+    </div>
 
-    <label for="quantite_disponible">Quantité disponible</label>
-    <input type="number" name="quantite_disponible" id="quantite_disponible" required>
+    <div class="field">
+        <label class="label" for="description">Description</label>
+        <div class="control">
+          <textarea class="textarea" name="description" id="description" required placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."></textarea>
+        </div>
+      </div>
 
-    <input type="submit" value="Envoyer">
+    <input type="submit" class="button is-primary" value="Ajouter">
+    <ButtonLight url={"./"} texte={"Retour"}></ButtonLight>
 </form>
