@@ -8,7 +8,7 @@ export const actions = {
 
         let res = await newRole(data.get("nom"), data.get("description"));
 
-        console.log(res);
+        //console.log(res);
     }
 
 }

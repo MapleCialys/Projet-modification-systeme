@@ -6,7 +6,7 @@
 
     const items = data.items;
 
-    console.log(items)
+   // console.log(items)
 
 </script>
 

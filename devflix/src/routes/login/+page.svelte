@@ -11,7 +11,7 @@
         });
 
         const result = await response.json();
-        console.log(result);
+        //console.log(result);
 
         if (result.type == 'failure')
             alert(result.data); // a changer pour mettre le message d'erreur sur la page

@@ -6,7 +6,7 @@ export const actions = {
 
     login: async({cookies, request}) => {
         const data = await request.formData();
-        console.log("Data : ", data)
+        //console.log("Data : ", data)
         try{
             const auth = await authenticate(data.get("nom"), data.get("prenom"), data.get("password"));
             createCookie(auth.id, cookies);

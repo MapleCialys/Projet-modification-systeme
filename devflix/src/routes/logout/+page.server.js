@@ -8,7 +8,7 @@ export async function load({ cookies })
         deleteCookie(cookies);
         return {success: true};
     }catch(error){
-        console.log(error);
+        //console.log(error);
         return fail(401, 'Erreur lors de la déconnexion.');
     }
 }

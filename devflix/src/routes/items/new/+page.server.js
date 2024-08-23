@@ -8,7 +8,7 @@ export const actions = {
 
         let res = await newItem(data.get("nom"), data.get("description"), data.get("quantite"));
 
-        console.log(res);
+        //console.log(res);
     }
 
 }

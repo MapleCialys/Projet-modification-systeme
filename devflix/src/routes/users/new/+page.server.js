@@ -21,6 +21,6 @@ export const actions = {
             return fail(401, error);
         }
 
-        console.log(res);
+        //console.log(res);
     }
 }
