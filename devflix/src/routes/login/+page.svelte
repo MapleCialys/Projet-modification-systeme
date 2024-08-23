@@ -1,5 +1,4 @@
 <script>
-    let message = '';
 
     async function handleSubmit(event)
     {
@@ -17,7 +16,7 @@
         if (result.type == 'failure')
             alert(result.data); // a changer pour mettre le message d'erreur sur la page
         else
-            alert('gg ma gueule'); //a changer pour la redirection
+            window.location.href = '/items'; //a changer pour la redirection
     }
 </script>
 

@@ -13,11 +13,17 @@ import { Sessions } from "../models/sessions.model";
  * @param {Number} p_role_id
  * @param {String} p_password
  */
-export async function newUser(p_nom, p_prenom, p_role_id, p_password){
+export async function newUser(p_nom, p_prenom, p_courriel, p_role_id, p_password){
    try{
+    
+    const mail = await Users.findOne({where: {courriel: p_courriel}});
+    if(mail)
+        throw "Un Compte avec ce courriel existe déjà."
+
      const resultat = await Users.create({
         nom: p_nom,
         prenom: p_prenom,
+        courriel: p_courriel,
         role_id: p_role_id,
         password: p_password
     });

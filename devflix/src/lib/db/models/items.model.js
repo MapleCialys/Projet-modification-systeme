@@ -17,7 +17,7 @@ export const Items = sequelize.define("items", {
 });
 
 sequelize.sync().then(() => {
-    console.log('Intems table created successfully!');
+    console.log('Items table created successfully!');
 }).catch((error) => {
     console.error('Unable to create table : ', error);
 });
