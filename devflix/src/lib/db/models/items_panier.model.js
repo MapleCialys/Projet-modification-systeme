@@ -3,7 +3,7 @@ import { sequelize } from '../db.js';
 import { Items } from './items.model.js';
 import { Panier } from './panier.model.js';
 
-export const Items_Panier = sequelize.define("panier", {
+export const Items_Panier = sequelize.define("items_panier", {
     items_id: {
         type: DataTypes.INTEGER,
         references: {
