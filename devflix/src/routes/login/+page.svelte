@@ -16,7 +16,7 @@
         if (result.type == 'failure')
             alert(result.data); // a changer pour mettre le message d'erreur sur la page
         else
-            window.location.href = '/items'; //a changer pour la redirection
+            window.location.href = '/items';
     }
 </script>
 
@@ -24,11 +24,14 @@
 
 <form on:submit|preventDefault={handleSubmit}>
 
-    <label for="nom">Nom</label>
+    <!-- <label for="nom">Nom</label>
     <input type="text" name="nom" id="nom">
 
     <label for="prenom">Prenom</label>
-    <input type="text" name="prenom" id="prenom">
+    <input type="text" name="prenom" id="prenom"> -->
+
+    <label for="courriel">Courriel</label>
+    <input type="email" name="courriel" id="courriel">
 
     <label for="password">Password</label>
     <input type="password" name="password" id="password">
