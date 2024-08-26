@@ -1,7 +1,9 @@
 <script>
 
     export let data;
+
     const item = data.item;
+    const panier = data.panier;
 
     import {formatDate} from '../../../lib/index.js';
 
@@ -21,7 +23,7 @@
         <p>Description : {item.description}</p>
         <p>Quantité disponible : {item.quantite_disponible}</p>
 
-        <a href="./" class="button is-primary">Ajouter au panier</a>
+        <a href="./panier/{panier.id}" class="button is-primary">Ajouter au panier</a>
     </div>
 
     <a href="/" class="button is-warning">Éditer cette fiche</a>
