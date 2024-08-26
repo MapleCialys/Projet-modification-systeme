@@ -1,4 +1,5 @@
 import { newItem } from "$lib/db/controllers/items.controller";
+import { redirect } from '@sveltejs/kit';
 
 export const actions = {
 
@@ -9,10 +10,8 @@ export const actions = {
 
         console.log(res);
 
-        const itemId = res.id;
-
-        // Redirection vers la page du nouveau film une fois formulaire rempli et envoyé
-        throw redirect(303, '/items/{itemId}');
+        // Redirection vers le catalogue
+        throw redirect(303, "/items");
     }
 
 }
