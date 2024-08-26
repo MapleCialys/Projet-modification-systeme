@@ -20,6 +20,22 @@ export async function newPanier(p_user_id){
 }
 
 /**
+ * Va chercher tous les paniers
+ *
+ * @export
+ * @async
+ * @returns {Object}
+ */
+export async function findAll(){
+    return await Panier.findAll().then(resultat => {
+        return resultat.map(panier => panier.dataValues);
+    })
+    .catch((error)=>{
+        throw error;
+    });
+}
+
+/**
  * Find Panier
  *
  * @export
