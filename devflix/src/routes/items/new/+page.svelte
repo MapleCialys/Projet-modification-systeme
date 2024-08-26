@@ -16,7 +16,7 @@
     <div class="field">
         <label class="label" for="bande_annonce">Lien vers la bande annonce</label>
         <div class="control">
-          <input class="input" type="url" placeholder="YouTube ou local" name="bande_annonce" id="bande_annonce">
+          <input class="input" type="url" placeholder="https://www.youtube.com/embed/VIDEO_ID" name="bande_annonce" id="bande_annonce">
         </div>
     </div>
 
