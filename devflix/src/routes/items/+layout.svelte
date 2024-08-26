@@ -1,10 +1,17 @@
+<script>
+    import ReusableLayout from '$lib/components/ReusableLayout.svelte';
+</script>
+
 <style>
-    /* Annuler le style de "routes/+layout.svelte" */
-    :global(body) {
-        color: initial !important;
-        background-color: initial !important;
-        transform: initial !important;
-        cursor: initial !important;
+    /* Container et redimmension automatique pour les images d'affiches de films */
+    :global(.image-container) {
+          display: flex;
+          justify-content: center;
+      }
+    :global(.resized-image) {
+        width: auto;
+        max-width: 560px;
+        height: 380px;
     }
 </style>
 

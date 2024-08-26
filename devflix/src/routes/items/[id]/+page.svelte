@@ -5,15 +5,15 @@
     const item = data.item;
     const panier = data.panier;
 
-    import {formatDate} from '../../../lib/index.js';
+    import {formatDate} from '$lib/index.js';
 
-    import H1Title from '../../../lib/components/h1Title.svelte';
-    import ButtonLight from '../../../lib/components/buttonLight.svelte';
+    import H1Title from '$lib/components/h1Title.svelte';
+    import ButtonLight from '$lib/components/buttonLight.svelte';
 
 </script>
 
 <div class="block">
-    
+
     <H1Title title={item.nom}></H1Title>
     
         <div class="columns">
@@ -55,22 +55,6 @@
 
 
 <style>
-    .block {
-        margin: 1.5rem;
-    }
-    
-    .image-container {
-        display: flex;
-        justify-content: center;
-    }
-
-    .resized-image {
-        width: auto;
-        max-width: 560px;
-        height: auto;
-        max-height: 566px;
-    }
-
     .video-container {
         display: flex;
         justify-content: center;

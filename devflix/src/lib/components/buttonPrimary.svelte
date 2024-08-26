@@ -1,5 +1,6 @@
 <script>
     export let texte
+    export let url
 </script>
 
-<button class="button is-primary">{texte}</button>
+<a href={url} class="button is-primary">{texte}</a>
