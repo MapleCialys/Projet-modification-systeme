@@ -1,4 +1,3 @@
-
 import { newItem } from "$lib/db/controllers/items.controller";
 
 export const actions = {

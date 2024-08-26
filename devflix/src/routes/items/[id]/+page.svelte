@@ -41,7 +41,11 @@
                 <p><strong>Date de sortie :</strong> {formatDate(item.date)}</p><br>
                 <p>Description : {item.description}</p><br>
                 <p><strong>Quantité disponible :</strong> {item.quantite_disponible}</p><br>
-                <a href="./panier" class="button is-primary">Ajouter au panier</a>
+
+                <form method="POST" action="?/add">
+                    <input type="number" name="id" id="id" value={item.id} readonly hidden>
+                    <button type="submit" class="button is-primary">Ajouter au panier</button>
+                </form>
             </div>
           </div>
     
