@@ -37,3 +37,26 @@ export async function deleteCookie(p_cookie)
         throw error;
     });
 }
+
+/**
+ * Find User
+ *
+ * @export
+ * @async
+ * @param {Object} p_where
+ * @returns {Object}
+ */
+export async function findOne(p_where){
+    return await Sessions.findOne({ where: p_where, include: [{
+        model: Users,
+        as: 'users'
+    }]})
+    .then(res => {
+        return {
+            ...res.dataValues,
+            user: res.user ? res.user.dataValues : null
+        };
+    }).catch((error) => {
+        throw error;
+    });
+}

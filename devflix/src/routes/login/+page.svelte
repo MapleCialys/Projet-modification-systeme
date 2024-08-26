@@ -16,6 +16,7 @@
         if (result.type == 'failure')
             alert(result.data); // a changer pour mettre le message d'erreur sur la page
         else
+        alert(result);
             window.location.href = '/items';
     }
 </script>
