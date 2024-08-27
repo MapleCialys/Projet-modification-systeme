@@ -1,11 +1,26 @@
 <script>
+	import Logout from "../../lib/component/logout.svelte";
+
 
     export let data;
+    console.log(data);
+
 
     const items = data.items;
     const panier = data.panier;
+    const role = data.user.role_id;
 
-    console.log(items)
+   // console.log(items)
+
+   function goNew()
+   {
+    window.location.href='/items/new';
+   }
+
+    import {formatDate} from '$lib/index.js';
+
+    import H1Title from '$lib/components/h1Title.svelte'
+    import ButtonPrimary from '$lib/components/buttonPrimary.svelte';
 
     import {formatDate} from '$lib/index.js';
 

@@ -1,28 +1,34 @@
-<h1>Base du projet</h1>
-
-<section>
-    <p>Voici le code de base du projet.</p>
-    <p>Vous pouvez modifier les fonctions et le code, cependant l'architecture doit rester la même!</p>
-    <p>Par exemple, il doit y avoir la route "users", "items", "roles" et "login"</p>
-    <p>De plus, vous n'avez pas le droit de toucher à ce qui ce trouve dans "routes/+layout.svelte", vous devrez donc trouver un moyen d'annuler le style!</p>
-    <p>N'oubliez pas d'aller consulter "Projet_Modification dun système existant" sur Léa.</p>
-</section>
-
-<section>
-    <p>Voici quelques liens pour vous aider avec Squelize : </p>
-    <a href="https://sequelize.org/docs/v6/getting-started/">Documentation</a>
-    <a href="https://www.digitalocean.com/community/tutorials/how-to-use-sequelize-with-node-js-and-mysql#step-4-creating-associations-using-sequelize">Exemple</a>    
-</section>
-
-
-<section id="section_code">
-    <p>Pour démarrer le projet : </p>
-    <code>npm i</code>
-    <code>npm run dev -- --open</code>
+<script>
+    import logo from "$lib/img/app/logo.png";
+</script>
+<script context="module">
+    export let cookie;
+    console.log(cookie);
+</script>
+<section class="hero is-fullheight header-image">
+    <div class="hero-head is-right m-4">
+        <div class="buttons is-right">
+        <button class="button is-warning is-rounded" on:click={() => window.location.href='/login'}>Se connecter</button>
+        <button class="button is-warning is-light is-rounded" on:click={() => window.location.href='/users/new'}>Creer un compte</button>
+        </div> 
+    </div>
+    <div class="hero-body">
+                <figure class="image">
+                    <img alt="logo" src="{logo}" />
+                </figure>
+       </div>
+    <div class="hero-foot"></div>
 </section>
 
 <style>
-    #section_code code{
-        display: flex;
-    }
+    .header-image {
+    /* background-image: url("http://orig14.deviantart.net/7584/f/2015/181/2/7/flat_mountains_landscape_by_ggiuliafilippini-d8zdbco.jpg"); */
+    background-image: url("$lib/img/app/hero2.jpg");
+    
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #999;
+}
 </style>

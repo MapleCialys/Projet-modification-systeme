@@ -4,7 +4,7 @@
 
     const user = data.user;
 
-    console.log(user);
+    //console.log(user);
 
 </script>
 

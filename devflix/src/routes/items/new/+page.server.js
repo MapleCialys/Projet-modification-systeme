@@ -1,5 +1,17 @@
 import { newItem } from "$lib/db/controllers/items.controller";
-import { redirect } from '@sveltejs/kit';
+import { findOne } from "../../../lib/db/controllers/sessions.controller.js";
+import { redirect } from "@sveltejs/kit";
+
+export async function load({params, cookies}) {
+    const session = cookies.get("session");
+    const id_user = await findOne({uuid: session});
+    if(id_user.users.dataValues.role_id != 1)
+    {
+        console.log('Utilisateur non autorisé' , id_user.users);
+        redirect(308, '/logout');
+    }
+    return { user: id_user.users.dataValues };
+}
 
 export const actions = {
 
