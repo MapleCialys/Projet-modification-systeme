@@ -4,11 +4,20 @@ import { Users } from "../lib/db/models/users.model";
 import { Items } from "../lib/db/models/items.model";
 import { Sessions } from "../lib/db/models/sessions.model";
 import { sequelize } from "../lib/db/db";
+import { newUser } from "../lib/db/controllers/users.controller.js";
 
 export async function load({ cookies }) {
     await sequelize.sync();
-    const sessionCookie = cookies.get('session', {path: '/'});
-    if (!sessionCookie)
-        return{cookie:false};
-    return{cookie: sessionCookie};
+    
+    const role_admin = await Roles.findOne({where: {id: 1}});
+    const role_client = await Roles.findOne({where: {id: 2}});
+    if (!role_admin)
+        await newRole('admin', 'Administrateur de l\'application');
+    if (!role_client)
+        await newRole('client', 'Client avec autorisations réduites');
+    const admin = await Users.findOne({where: {courriel: 'admin@devflix.ca'}});
+    if (!admin)
+        await newUser('admin', 'admin', 'admin@devflix.ca', "1", 'admin');
+    
+    return{};
 }
