@@ -3,10 +3,22 @@ import { newUser } from "$lib/db/controllers/users.controller.js";
 import { findAll } from "../../../lib/db/controllers/roles.controller";
 import { createCookie } from "../../../lib/db/controllers/sessions.controller";
 import { fail } from '@sveltejs/kit';
+import { findOne } from "../../../lib/db/controllers/sessions.controller";
 
-export async function load({params}){
+export async function load({params, cookies}){
 
 }
+
+
+export async function load({params, cookies}) {
+    const session = cookies.get("session");
+    let id_user = null ;
+    if (session)
+        id_user = await findOne({uuid: session});
+    console.log(id_user);
+    return { user: JSON.stringify(id_user) };
+}
+
 
 
 export const actions = {

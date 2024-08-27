@@ -19,6 +19,8 @@
         else
             window.location.href = '/items';
     }
+    export let data;
+    console.log(data);
 </script>
 
 <section class="hero is-fullheight content-image">

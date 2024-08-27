@@ -1,13 +1,4 @@
 <script>
-    function goLogin()
-    {
-        window.location.href='/login';
-    }
-
-    function goSignin()
-    {
-        window.location.href='/users/new';
-    }
     import logo from "$lib/img/app/logo.png";
 </script>
 <script context="module">
@@ -17,8 +8,8 @@
 <section class="hero is-fullheight header-image">
     <div class="hero-head is-right m-4">
         <div class="buttons is-right">
-        <button class="button is-warning is-rounded" on:click={goLogin}>Se connecter</button>
-        <button class="button is-warning is-light is-rounded" on:click={goSignin}>Creer un compte</button>
+        <button class="button is-warning is-rounded" on:click={() => window.location.href='/login'}>Se connecter</button>
+        <button class="button is-warning is-light is-rounded" on:click={() => window.location.href='/users/new'}>Creer un compte</button>
         </div> 
     </div>
     <div class="hero-body">
