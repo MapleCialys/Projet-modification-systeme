@@ -7,13 +7,19 @@ import { Items } from "../models/items.model";
  * @export
  * @param {String} p_nom
  * @param {String} p_description
- * @param {Number} p_quantite
+ * @param {String} p_image_item
+ * @param {String} p_bande_annonce
+ * @param {Date} p_date
+ * @param {Number} p_quantite_disponible
  */
-export async function newItem(p_nom, p_description, p_quantite){
+export async function newItem(p_nom, p_description, p_image_item, p_bande_annonce, p_date, p_quantite_disponible){
     Items.create({
         nom: p_nom,
         description: p_description,
-        quantite: p_quantite
+        image_item: p_image_item,
+        bande_annonce: p_bande_annonce,
+        date: p_date,
+        quantite_disponible: p_quantite_disponible
     })
     .then(resultat => {
         return resultat.dataValues;
