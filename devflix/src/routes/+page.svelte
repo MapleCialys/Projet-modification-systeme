@@ -23,7 +23,7 @@
     </div>
     <div class="hero-body">
                 <figure class="image">
-                    <img src="{logo}" />
+                    <img alt="logo" src="{logo}" />
                 </figure>
        </div>
     <div class="hero-foot"></div>

@@ -68,11 +68,14 @@ export async function findOne(p_where){
         as: 'role'
     }]})
     .then(res => {
+        if(res)
         return {
             ...res.dataValues,
             role: res.role ? res.role.dataValues : null
         };
-    }).catch((error) => {
+        else
+            return null;
+    }).catch((error) => {;
         throw error;
     });
 }
