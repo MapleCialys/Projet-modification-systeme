@@ -38,7 +38,7 @@ export async function findAll(){
 }
 
 /**
- * Find Item
+ * Find Role
  *
  * @export
  * @async

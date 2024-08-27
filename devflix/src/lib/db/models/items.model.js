@@ -10,7 +10,19 @@ export const Items = sequelize.define("items", {
         type: DataTypes.STRING,
         allowNull: false
     },
-    quantite: {
+    image_item: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+    bande_annonce: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+    date: {
+        type: DataTypes.DATE,
+        allowNull: true
+    },
+    quantite_disponible: {
         type: DataTypes.INTEGER,
         allowNull: false
     }
