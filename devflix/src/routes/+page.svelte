@@ -1,5 +1,6 @@
 <script>
     import logo from "$lib/img/app/logo.png";
+    import ReusableLayout from "$lib/components/ReusableLayout.svelte";
 </script>
 <script context="module">
     export let cookie;

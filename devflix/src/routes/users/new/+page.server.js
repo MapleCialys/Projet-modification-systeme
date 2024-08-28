@@ -5,10 +5,6 @@ import { createCookie } from "../../../lib/db/controllers/sessions.controller";
 import { fail } from '@sveltejs/kit';
 import { findOne } from "../../../lib/db/controllers/sessions.controller";
 
-export async function load({params, cookies}){
-
-}
-
 
 export async function load({params, cookies}) {
     const session = cookies.get("session");

@@ -1,5 +1,5 @@
 <script>
-    import Goback from "../../lib/component/goback.svelte";
+    import Goback from "../../lib/components/goback.svelte";
     let erreur = null;
     async function handleSubmit(event)
     {
