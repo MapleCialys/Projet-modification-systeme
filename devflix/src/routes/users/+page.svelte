@@ -1,5 +1,5 @@
 <script>
-
+    
     export let data;
 
     const users = data.users;
