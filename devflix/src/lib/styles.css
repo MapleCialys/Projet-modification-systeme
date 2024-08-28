@@ -48,6 +48,7 @@ body {
     background-color: #999;
 }
 
+/* Image de fond pour la page d'accueil */
 .header-image {
     background-image: url("$lib/img/app/hero2.jpg");
     background-position: center center;
