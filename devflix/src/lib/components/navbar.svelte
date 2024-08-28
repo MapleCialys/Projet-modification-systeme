@@ -31,8 +31,8 @@
     </a>
   </div>
 
-  <div id="navbarDevflix" class="navbar-menu">
-    <div class="navbar-start">
+  <div id="navbarDevflix" class="navbar-menu">    
+    <div class="navbar-end">
       <a class="navbar-item" href="/items">
         Catalogue
       </a>
@@ -44,20 +44,18 @@
       <a class="navbar-item" href="/users">
         Utilisateurs
       </a>
-    </div>
-  </div>
-      
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="buttons">
-            <Logout />
-            
-            <a class="has-text-white" href="#">
-              <i class="fa-solid fa-xl fa-cart-shopping"></i>
-            </a>
-          </div>
+
+      <div class="navbar-item">
+        <div class="buttons">
+          <Logout />
+          
+          <a class="has-text-white" href="#">
+            <i class="fa-solid fa-xl fa-cart-shopping"></i>
+          </a>
         </div>
       </div>
+    </div>
+  </div>
 </nav>
 
 <style>
