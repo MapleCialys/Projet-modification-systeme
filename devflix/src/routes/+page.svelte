@@ -1,6 +1,7 @@
 <script>
     import logo from "$lib/img/app/logo.png";
     import '$lib/styles.css';
+    import Footer from '$lib/components/footer.svelte';
 </script>
 <script context="module">
     export let cookie;
@@ -17,5 +18,5 @@
                     <img alt="logo" src="{logo}" />
                 </figure>
        </div>
-    <div class="hero-foot"></div>
+    <Footer />
 </section>

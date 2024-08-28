@@ -56,7 +56,8 @@
 
 </script>
 
-<div class="block content-image">
+<div class="block">
+    
     <H1Title title={"Catalogue de films"}></H1Title>
 
 
