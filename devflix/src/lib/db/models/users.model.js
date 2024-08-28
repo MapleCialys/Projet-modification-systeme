@@ -12,6 +12,10 @@ export const Users = sequelize.define("users", {
         type: DataTypes.STRING,
         allowNull: false
     },
+    courriel: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     password: {
         type: DataTypes.STRING,
         allowNull: false

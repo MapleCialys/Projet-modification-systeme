@@ -1,0 +1,58 @@
+/* Annuler le style de "routes/+layout.svelte" */
+body {
+    color: initial !important;
+    background-color: initial !important;
+    transform: initial !important;
+    cursor: initial !important;
+}
+
+/* Marges pour la class block */
+.block {
+    margin: 1.5rem;
+}
+
+/* Container pour les images d'affiches de films */
+.image-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* Redimmension automatique pour les images d'affiches de films */
+.resized-image {
+    width: auto;
+    max-width: 560px;
+    height: 400px;
+}
+
+/* Container pour les bandes annonce de films */
+.video-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Redimmension automatique pour les miniatures d'affiches de films */
+.miniature-image {
+  width: auto;
+  max-width: 560px;
+  height: 180px;
+}
+
+/* Image de fond sur pages login, users/new et items */
+.content-image {
+    background-image: url("$lib/img/app/hero2blury.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #999;
+}
+
+.header-image {
+    background-image: url("$lib/img/app/hero2.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #999;
+}

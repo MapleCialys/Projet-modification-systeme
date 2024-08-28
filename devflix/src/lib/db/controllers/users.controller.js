@@ -1,6 +1,7 @@
 import bcrypt from 'bcrypt';
 import { Users } from "../models/users.model";
 import { Roles } from "../models/roles.model";
+import { Sessions } from "../models/sessions.model";
 
 
 /**
@@ -12,19 +13,22 @@ import { Roles } from "../models/roles.model";
  * @param {Number} p_role_id
  * @param {String} p_password
  */
-export async function newUser(p_nom, p_prenom, p_role_id, p_password){
-    Users.create({
+export async function newUser(p_nom, p_prenom, p_courriel, p_role_id, p_password){
+   try{
+    const mail = await Users.findOne({where: {courriel: p_courriel}});
+    if(mail)
+        throw "Un Compte avec ce courriel existe déjà."
+     const resultat = await Users.create({
         nom: p_nom,
         prenom: p_prenom,
+        courriel: p_courriel,
         role_id: p_role_id,
         password: p_password
-    })
-    .then(resultat => {
-        return resultat.dataValues;
-    })
-    .catch((error)=>{
-        throw error;
     });
+    return resultat.dataValues;
+    }catch(error){
+        throw error;
+    }
 }
 
 /**
@@ -64,11 +68,14 @@ export async function findOne(p_where){
         as: 'role'
     }]})
     .then(res => {
+        if(res)
         return {
             ...res.dataValues,
             role: res.role ? res.role.dataValues : null
         };
-    }).catch((error) => {
+        else
+            return null;
+    }).catch((error) => {;
         throw error;
     });
 }
@@ -83,11 +90,11 @@ export async function findOne(p_where){
  * @param {String} p_password
  * @returns {Object}
  */
-export async function authenticate(p_nom, p_prenom, p_password){
+export async function authenticate(p_courriel, p_password){
     try{
 
         //Trouver l'utilisateur :
-        const user = await findOne({ nom: p_nom, prenom: p_prenom });
+        const user = await findOne({ courriel: p_courriel});
 
         if(!user) throw "Utilisateur non trouvé";
 
