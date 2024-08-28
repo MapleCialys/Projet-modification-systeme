@@ -75,9 +75,9 @@
 	</div>
 
     {#if show}
-        <div class="notification {notif} has-text-centered">
-        {message}
-        </div>
+    <div class="notification {notif} has-text-centered">
+    {message}
+    </div>
     {/if}
 
     <!-- Grille avec cards pour chaque film -->
@@ -92,7 +92,7 @@
                                 {#if item.image_item} <!-- Image générique si image_item est NULL -->
                                 <img src="{item.image_item}" alt="{item.nom}"/>
                                 {:else}
-                                <img src="/affiche_default.jpg" alt="{item.nom}"/>
+                                <img src="../src/lib/img/app/affiche_default.jpg" alt="{item.nom}"/>
                                 {/if}
                             </a>
                         </figure>
