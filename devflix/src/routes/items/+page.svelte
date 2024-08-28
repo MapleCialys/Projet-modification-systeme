@@ -1,19 +1,17 @@
 <script>
 	import Logout from "../../lib/components/logout.svelte";
-
+    import {formatDate} from '$lib/index.js';
+    import H1Title from '$lib/components/h1Title.svelte'
+    import ButtonPrimary from '$lib/components/buttonPrimary.svelte';
 
     export let data;
-    console.log(data);
-
 
     const items = data.items;
     const Paniers = data.Paniers;
     const role = data.user.role_id;
-
-    import {formatDate} from '$lib/index.js';
-
-    import H1Title from '$lib/components/h1Title.svelte'
-    import ButtonPrimary from '$lib/components/buttonPrimary.svelte';
+    let message = null;
+    let show = false;
+    let notif = null;
 
     async function ajoutPanier(event)
     {
@@ -24,14 +22,29 @@
             method: 'POST',
             body: formData
         });
-        console.log(response);
 
         const result = await response.json();
         console.log(result);
-        // if (result.type == 'failure')
-        //     erreur = JSON.parse(result.data)[0];
-        // else
-        //     window.location.href = '/items';
+        if (result.type == 'success')
+        {
+            message = "Article ajouté au panier.";
+            notif = "is-success";
+        }
+        else if (result.type == 'failure')
+        {
+            message = JSON.parse(result.data);
+            notif = "is-warning";
+        }
+    }
+
+    $: {
+      if (message) {
+        show = true;
+        setTimeout(() => {
+          show = false;
+          message = null;
+        }, 3000);
+      }
     }
 
 </script>
@@ -44,7 +57,11 @@
         <Logout />
     </div>
     
-
+    {#if show}
+    <div class="notification {notif} has-text-centered">
+      {message}
+    </div>
+  {/if}
     <!-- Grille avec cards pour chaque film -->
     <div class="grid is-col-min-10">
         {#each items as item}
