@@ -12,7 +12,6 @@
         });
 
         const result = await response.json();
-        //console.log(result);
 
         if (result.type == 'failure')
         erreur = JSON.parse(result.data)[0];
