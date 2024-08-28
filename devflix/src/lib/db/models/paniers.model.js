@@ -2,7 +2,7 @@ import { DataTypes } from 'sequelize';
 import { sequelize } from '../db.js';
 import { Users } from './users.model.js';
 
-export const Panier = sequelize.define("panier", {
+export const Paniers = sequelize.define("Paniers", {
     user_id: {
         type: DataTypes.INTEGER,
         references: {
@@ -13,10 +13,10 @@ export const Panier = sequelize.define("panier", {
     }
 });
 
-Panier.belongsTo(Users, { foreignKey: 'user_id', as: 'users' });
+Paniers.belongsTo(Users, { foreignKey: 'user_id', as: 'users' });
 
 sequelize.sync().then(() => {
-    console.log('Panier table created successfully!');
+    console.log('Paniers table created successfully!');
 }).catch((error) => {
-    console.error('Panier to create table : ', error);
+    console.error('Paniers to create table : ', error);
 });

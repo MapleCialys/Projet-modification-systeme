@@ -3,7 +3,7 @@
     export let data;
 
     const item = data.item;
-    const panier = data.panier;
+    const Paniers = data.Paniers;
 
     import {formatDate} from '$lib/index.js';
 
@@ -44,7 +44,7 @@
 
                 <form method="POST" action="?/add">
                     <input type="number" name="id" id="id" value={item.id} readonly hidden>
-                    <button type="submit" class="button is-primary">Ajouter au panier</button>
+                    <button type="submit" class="button is-primary">Ajouter au Paniers</button>
                 </form>
             </div>
           </div>

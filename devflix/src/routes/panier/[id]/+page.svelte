@@ -3,19 +3,19 @@
     export let data;
     
     const items = data.items;
-    const panier = data.panier;
+    const Paniers = data.Paniers;
 
-    console.log(panier)
+    console.log(Paniers)
 
     import H1Title from '../../lib/components/h1Title.svelte';
 
 </script>
 
 <div class="block">
-    <H1Title title={"Panier"}></H1Title>
+    <H1Title title={"Paniers"}></H1Title>
 
     <div>
-        <button class="button is-danger">Vider le panier</button>
+        <button class="button is-danger">Vider le Paniers</button>
     </div>
 
     <div>

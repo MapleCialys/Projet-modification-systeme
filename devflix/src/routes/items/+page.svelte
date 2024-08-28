@@ -7,7 +7,7 @@
 
 
     const items = data.items;
-    const panier = data.panier;
+    const Paniers = data.Paniers;
     const role = data.user.role_id;
 
     import {formatDate} from '$lib/index.js';
@@ -15,6 +15,24 @@
     import H1Title from '$lib/components/h1Title.svelte'
     import ButtonPrimary from '$lib/components/buttonPrimary.svelte';
 
+    async function ajoutPanier(event)
+    {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+
+        const response = await fetch('?/addToCart', {
+            method: 'POST',
+            body: formData
+        });
+        console.log(response);
+
+        const result = await response.json();
+        console.log(result);
+        // if (result.type == 'failure')
+        //     erreur = JSON.parse(result.data)[0];
+        // else
+        //     window.location.href = '/items';
+    }
 
 </script>
 
@@ -51,7 +69,11 @@
                             <h2 class="title is-4 is-thin">{item.nom}</h2>
                             <p class="subtitle is-6">{formatDate(item.date)}</p>
                             <p>Quantité disponible : {item.quantite_disponible}</p>
-                            <ButtonPrimary url={"./panier"} texte={"Ajouter au panier"}></ButtonPrimary>
+                            <form on:submit|preventDefault={ajoutPanier}>
+                                <input type="text" value="{item.id}" name="item" hidden>
+                                <button class="button is-primary is-rounded" type="submit">Ajouter au panier</button>
+                            </form>
+                            <!-- <ButtonPrimary url={"./Paniers"} texte={"Ajouter au Paniers"}></ButtonPrimary> -->
                         </div>
                     </div>
 

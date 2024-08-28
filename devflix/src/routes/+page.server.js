@@ -3,6 +3,8 @@ import { Roles } from "../lib/db/models/roles.model";
 import { Users } from "../lib/db/models/users.model";
 import { Items } from "../lib/db/models/items.model";
 import { Sessions } from "../lib/db/models/sessions.model";
+import { Paniers } from "../lib/db/models/Paniers.model.js";
+import { Items_Paniers } from "../lib/db/models/items_paniers.model.js";
 import { sequelize } from "../lib/db/db";
 import { newUser } from "../lib/db/controllers/users.controller.js";
 

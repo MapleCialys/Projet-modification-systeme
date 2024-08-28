@@ -1,14 +1,15 @@
-import { Panier } from "../models/panier.model";
+import { Paniers } from "../models/Paniers.model";
 import { Users } from "../models/users.model";
 
+
 /**
- * Création d'un nouveau panier
+ * Création d'un nouveau Paniers
  *
  * @export
  * @param {Number} p_user_id
  */
-export async function newPanier(p_user_id){
-    Panier.create({
+export async function newPaniers(p_user_id){
+    Paniers.create({
         user_id: p_user_id
     })
     .then(resultat => {
@@ -20,15 +21,15 @@ export async function newPanier(p_user_id){
 }
 
 /**
- * Va chercher tous les paniers
+ * Va chercher tous les Panierss
  *
  * @export
  * @async
  * @returns {Object}
  */
 export async function findAll(){
-    return await Panier.findAll().then(resultat => {
-        return resultat.map(panier => panier.dataValues);
+    return await Paniers.findAll().then(resultat => {
+        return resultat.map(Paniers => Paniers.dataValues);
     })
     .catch((error)=>{
         throw error;
@@ -36,7 +37,7 @@ export async function findAll(){
 }
 
 /**
- * Find Panier
+ * Find Paniers
  *
  * @export
  * @async
@@ -44,7 +45,7 @@ export async function findAll(){
  * @returns {Object}
  */
 export async function findOne(p_where){
-    return await Panier.findOne({ where: p_where, include: [{
+    return await Paniers.findOne({ where: p_where, include: [{
         model: Users,
         as: 'user'
     }]})

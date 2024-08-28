@@ -1,4 +1,4 @@
-/* Permet d'afficher les infos des films dans le panier */
+/* Permet d'afficher les infos des films dans le Paniers */
 import { findAll } from "../../lib/db/controllers/items.controller";
 
 export async function load({params}) {
@@ -6,16 +6,16 @@ export async function load({params}) {
     return { items:items };
 }
 
-/* Panier */
-import { findOne } from "$lib/db/controllers/panier.controller.js";
+/* Paniers */
+import { findOne } from "$lib/db/controllers/Paniers.controller.js";
 
 export const actions = {
 
     add: async({ cookies, request })=>{
         const data = await request.formData();
-        const panier = await findOne({id:params.id});
+        const Paniers = await findOne({id:params.id});
         
-        let res = await addPanier(data.get("id"), panier);
+        let res = await addPaniers(data.get("id"), Paniers);
 
         console.log(res);
     }
@@ -24,6 +24,6 @@ export const actions = {
 
 export async function load({ params }){
     console.log(params)
-    const panier = await findOne({id:params.id});
-    return { panier:panier }
+    const Paniers = await findOne({id:params.id});
+    return { Paniers:Paniers }
 }
