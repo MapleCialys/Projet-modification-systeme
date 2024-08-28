@@ -1,0 +1,33 @@
+/* Annuler le style de "routes/+layout.svelte" */
+body {
+    color: initial !important;
+    background-color: initial !important;
+    transform: initial !important;
+    cursor: initial !important;
+}
+
+/* Marges pour la class block */
+.block {
+    margin: 1.5rem;
+}
+
+/* Page items */
+/* Container pour les images d'affiches de films */
+.image-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* Page items/id */
+/* Redimmension automatique pour les images d'affiches de films */
+.resized-image {
+    width: auto;
+    max-width: 560px;
+    height: 400px;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
