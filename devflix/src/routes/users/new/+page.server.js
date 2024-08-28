@@ -12,7 +12,6 @@ export async function load({params, cookies}) {
     let id_user = null ;
     if (session)
         id_user = await findOne({uuid: session});
-    console.log(id_user);
     return { user: JSON.stringify(id_user) };
 }
 
@@ -30,7 +29,5 @@ export const actions = {
         }catch(error){
             return fail(401, error);
         }
-
-        //console.log(res);
     }
 }

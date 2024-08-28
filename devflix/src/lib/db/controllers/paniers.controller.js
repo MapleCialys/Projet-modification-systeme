@@ -1,4 +1,4 @@
-import { Paniers } from "../models/Paniers.model";
+import { Paniers } from "../models/paniers.model";
 import { Users } from "../models/users.model";
 
 
@@ -21,7 +21,7 @@ export async function newPaniers(p_user_id){
 }
 
 /**
- * Va chercher tous les Panierss
+ * Va chercher tous les Paniers
  *
  * @export
  * @async
@@ -47,7 +47,7 @@ export async function findAll(){
 export async function findOne(p_where){
     return await Paniers.findOne({ where: p_where, include: [{
         model: Users,
-        as: 'user'
+        as: 'users'
     }]})
     .then(res => {
         return {

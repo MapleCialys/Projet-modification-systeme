@@ -3,9 +3,6 @@
     export let data;
 
     const user = data.user;
-
-    //console.log(user);
-
 </script>
 
 <h1>Utilisateur Spécifique</h1>

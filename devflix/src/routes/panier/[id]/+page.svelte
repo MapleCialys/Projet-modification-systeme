@@ -5,9 +5,7 @@
     const items = data.items;
     const Paniers = data.Paniers;
 
-    console.log(Paniers)
-
-    import H1Title from '../../lib/components/h1Title.svelte';
+    import H1Title from '$lib/components/h1Title.svelte';
 
 </script>
 
