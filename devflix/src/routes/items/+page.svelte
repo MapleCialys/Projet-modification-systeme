@@ -12,6 +12,10 @@
     let message = null;
     let show = false;
     let notif = null;
+    let admin = false;
+
+    if(role == 1)
+        admin = true;
 
     async function ajoutPanier(event)
     {
@@ -49,11 +53,14 @@
 
 </script>
 
-<div class="block">
+<div class="block content-image">
     <H1Title title={"Catalogue de films"}></H1Title>
 
+
     <div class="block has-text-right">
+        {#if admin}
         <ButtonPrimary url={"/items/new"} texte={"Ajouter un film"}></ButtonPrimary>
+        {/if}
         <Logout />
     </div>
     
