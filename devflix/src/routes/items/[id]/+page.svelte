@@ -55,7 +55,11 @@
         <div class="columns">
             <!-- First column -->
             <div class="column is-narrow">
+                {#if item.image_item} <!-- Image générique si image_item est NULL -->
                 <figure class="image-container"><img src="../{item.image_item}" alt="{item.nom}" class="resized-image"/></figure>
+                {:else}
+                <figure class="image-container"><img src="../src/lib/img/app/affiche_default.jpg" alt="{item.nom}" class="resized-image"/></figure>
+                {/if}
 
                 {#if item.bande_annonce} <!-- Ne pas affiché zone vidéo si bande_annonce est NULL -->
                     <div class="video-container">

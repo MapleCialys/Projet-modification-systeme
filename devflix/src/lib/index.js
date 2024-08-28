@@ -1,4 +1,5 @@
 // place files you want to import through the `$lib` alias in this folder.
+import '$lib/styles.css';
 
 // Fonction pour modifier le format de date à JJ Mois AAAA
 export function formatDate(dateString) {
