@@ -3,9 +3,9 @@
   import { onMount } from "svelte";
   import logo from "$lib/img/app/logo.png";
   import Logout from "$lib/components/logout.svelte";
-  import { findOne } from "../../lib/db/controllers/sessions.controller.js";
-  import { findOne as findInUsers } from "$lib/db/controllers/users.controller";
-  import { findOne as findInPaniers } from '$lib/db/controllers/paniers.controller';
+  //import { findOne } from "../../lib/db/controllers/sessions.controller.js";
+  //import { findOne as findInUsers } from "$lib/db/controllers/users.controller";
+  //import { findOne as findInPaniers } from '$lib/db/controllers/paniers.controller';
 
   onMount(() => {
     const burger = document.querySelector('.navbar-burger');
@@ -37,7 +37,7 @@
         Catalogue
       </a>
 
-      <a class="navbar-item" href="/users/{user.id}">
+      <a class="navbar-item" href="#">
         Mon compte
       </a>
 
@@ -52,7 +52,7 @@
           <div class="buttons">
             <Logout />
             
-            <a class="has-text-white" href="/panier/{Paniers.id}">
+            <a class="has-text-white" href="#">
               <i class="fa-solid fa-xl fa-cart-shopping"></i>
             </a>
           </div>
