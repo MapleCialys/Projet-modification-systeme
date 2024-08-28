@@ -1,5 +1,6 @@
 <script>
     import logo from "$lib/img/app/logo.png";
+    import '$lib/styles.css';
 </script>
 <script context="module">
     export let cookie;
