@@ -1,18 +1,19 @@
-import { Items_ } from "../models/items_Paniers.model";
+
 import { Items } from "../models/items.model";
 import { Paniers } from "../models/Paniers.model";
+import { Items_Paniers } from "../models/items_Paniers.model";
 
 /**
  * Création d'un nouveau items_Paniers
  *
  * @export
  * @param {Number} p_items_id
- * @param {Number} p_Paniers_id
+ * @param {Number} p_paniers_id
  */
-export async function newPaniers(p_items_id, Paniers_id){
+export async function newItemsPaniers(p_items_id, p_paniers_id){
     Items_Paniers.create({
         items_id: p_items_id,
-        Paniers_id: p_Paniers_id
+        Paniers_id: p_paniers_id
     })
     .then(resultat => {
         return resultat.dataValues;

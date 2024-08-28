@@ -1,6 +1,9 @@
 import { findAll } from "../../lib/db/controllers/items.controller";
 import { findOne } from "../../lib/db/controllers/sessions.controller.js";
 import { redirect } from "@sveltejs/kit";
+import { fail } from "@sveltejs/kit";
+import { newItemsPaniers } from "../../lib/db/controllers/items_paniers.controller.js";
+import { Paniers } from "../../lib/db/models/Paniers.model.js";
 
 export async function load({params, cookies}) {
     const items = await findAll();
@@ -13,6 +16,23 @@ export async function load({params, cookies}) {
     }
     else
     return { items:items }
+}
 
-    
+export const actions = {
+
+    addToCart: async({cookies, request}) => {
+        const data = await request.formData();
+        const session = cookies.get("session");
+        const user_data = await findOne({uuid: session});
+        const id_user = user_data.users.dataValues.id;
+        const panier_data = await Paniers.findOne({where:{user_id: id_user}});
+        const panier_id = panier_data.dataValues.id;
+        try{
+            const res = await newItemsPaniers(data.get("item"), panier_id);
+            return { success: true, res }
+        }catch(error){
+            console.log("Erreur lors de l'ajout au panier' : ", error);
+            return fail(401, error);
+        }
+    }
 }
