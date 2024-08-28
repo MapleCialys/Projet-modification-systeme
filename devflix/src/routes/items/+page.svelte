@@ -4,7 +4,6 @@
 
     export let data;
     console.log(data);
-    console.log('peut etre ici ?');
 
 
     const items = data.items;
