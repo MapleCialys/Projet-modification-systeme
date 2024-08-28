@@ -1,5 +1,5 @@
 <script>
-	import Logout from "../../lib/components/logout.svelte";
+	import Logout from "$lib/components/logout.svelte";
     import {formatDate} from '$lib/index.js';
     import H1Title from '$lib/components/h1Title.svelte'
     import ButtonPrimary from '$lib/components/buttonPrimary.svelte';
@@ -51,6 +51,9 @@
       }
     }
 
+    /* Variable la barre de recherche */
+    let searchQuery = '';
+
 </script>
 
 <div class="block content-image">
@@ -64,14 +67,22 @@
         <Logout />
     </div>
     
+    <!-- Barre de recherche -->
+    <div class="field">
+        <div class="control">
+		    <input class="input" type="text" placeholder="Rechercher un film..." bind:value={searchQuery} />
+        </div>
+	</div>
+
     {#if show}
-    <div class="notification {notif} has-text-centered">
-      {message}
-    </div>
-  {/if}
+        <div class="notification {notif} has-text-centered">
+        {message}
+        </div>
+    {/if}
+
     <!-- Grille avec cards pour chaque film -->
     <div class="grid is-col-min-10">
-        {#each items as item}
+        {#each items.filter(item => item.nom.toLowerCase().includes(searchQuery.toLowerCase())) as item}
             <div class="cell is-flex">
                 <div class="card">
 
