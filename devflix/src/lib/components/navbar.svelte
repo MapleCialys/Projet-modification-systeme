@@ -16,11 +16,12 @@
 
 </script>
 
-<nav class="navbar is-black" role="navigation" aria-label="main navigation">
+<nav class="navbar is-black" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="/"><img src={logo} alt="Devflix" /></a>
     
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarDevflix">
+      <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
@@ -47,6 +48,7 @@
         <div class="navbar-item">
           <div class="buttons">
             <Logout />
+            <i class="fa-solid fa-xl fa-cart-shopping"></i>
           </div>
         </div>
       </div>
