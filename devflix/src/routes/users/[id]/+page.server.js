@@ -1,4 +1,4 @@
-import { findOne } from "../../../lib/db/controllers/users.controller";
+import { findOne } from "$lib/db/controllers/users.controller";
 
 export async function load({ params }){
     const idUser = params.id;

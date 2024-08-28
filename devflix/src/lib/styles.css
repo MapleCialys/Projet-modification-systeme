@@ -57,3 +57,8 @@ body {
     background-size: cover;
     background-color: #999;
 }
+
+/* Pour griser les input des formulaire si readonly */
+.readonly {
+    background-color: lightgray;
+}
