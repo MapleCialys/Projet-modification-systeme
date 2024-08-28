@@ -1,18 +1,18 @@
-import { Items_Panier } from "../models/items_panier.model";
+import { Items_ } from "../models/items_Paniers.model";
 import { Items } from "../models/items.model";
-import { Panier } from "../models/panier.model";
+import { Paniers } from "../models/Paniers.model";
 
 /**
- * Création d'un nouveau items_panier
+ * Création d'un nouveau items_Paniers
  *
  * @export
  * @param {Number} p_items_id
- * @param {Number} p_panier_id
+ * @param {Number} p_Paniers_id
  */
-export async function newPanier(p_items_id, panier_id){
-    Items_Panier.create({
+export async function newPaniers(p_items_id, Paniers_id){
+    Items_Paniers.create({
         items_id: p_items_id,
-        panier_id: p_panier_id
+        Paniers_id: p_Paniers_id
     })
     .then(resultat => {
         return resultat.dataValues;
@@ -23,20 +23,20 @@ export async function newPanier(p_items_id, panier_id){
 }
 
 /**
- * Va chercher tous les items_panier
+ * Va chercher tous les items_Paniers
  *
  * @export
  * @async
  * @returns {Object}
  */
 export async function findAll(){
-    return await Items_Panier.findAll({
+    return await Items_Paniers.findAll({
         include: [
             { model: Items, as: "items" },
-            { model: Panier, as: "panier" }
+            { model: Paniers, as: "Paniers" }
         ]
     }).then(resultat => {
-        return resultat.map(item_panier => item_panier.dataValues);
+        return resultat.map(item_Paniers => item_Paniers.dataValues);
     })
     .catch((error)=>{
         throw error;
@@ -44,7 +44,7 @@ export async function findAll(){
 }
 
 /**
- * Find Item_Panier
+ * Find Item_Paniers
  *
  * @export
  * @async
@@ -52,18 +52,18 @@ export async function findAll(){
  * @returns {Object}
  */
 export async function findOne(p_where){
-    return await Items_Panier.findOne({ where: p_where, include: [{
+    return await Items_Paniers.findOne({ where: p_where, include: [{
         model: Items,
         as: 'items',
-        model: Panier,
-        as: 'panier'
+        model: Paniers,
+        as: 'Paniers'
     }]})
     .then(res => {
         return {
             ...res.dataValues,
             items: res.items ? res.items.dataValues : null,
             ...res.dataValues,
-            panier: res.panier ? res.panier.dataValues : null
+            Paniers: res.Paniers ? res.Paniers.dataValues : null
         };
     }).catch((error) => {
         throw error;

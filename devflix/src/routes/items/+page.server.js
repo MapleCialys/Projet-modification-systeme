@@ -6,7 +6,6 @@ export async function load({params, cookies}) {
     const items = await findAll();
     const session = cookies.get("session");
     let id_user = null;
-    console.log("ici ma gueule");
     if(session)
     {
         id_user = await findOne({uuid: session});

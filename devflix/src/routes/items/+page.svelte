@@ -7,7 +7,7 @@
 
 
     const items = data.items;
-    const panier = data.panier;
+    const Paniers = data.Paniers;
     const role = data.user.role_id;
 
     import {formatDate} from '$lib/index.js';
@@ -51,7 +51,7 @@
                             <h2 class="title is-4 is-thin">{item.nom}</h2>
                             <p class="subtitle is-6">{formatDate(item.date)}</p>
                             <p>Quantité disponible : {item.quantite_disponible}</p>
-                            <ButtonPrimary url={"./panier"} texte={"Ajouter au panier"}></ButtonPrimary>
+                            <ButtonPrimary url={"./Paniers"} texte={"Ajouter au Paniers"}></ButtonPrimary>
                         </div>
                     </div>
 
