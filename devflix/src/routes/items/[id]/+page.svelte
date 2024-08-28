@@ -3,7 +3,8 @@
 
     import {formatDate} from '$lib/index.js';
     import H1Title from '$lib/components/h1Title.svelte';
-    import ButtonLight from '$lib/components/buttonLight.svelte';
+    import Goback from "$lib/components/goback.svelte";
+    import ButtonWarning from '$lib/components/buttonWarning.svelte';
     
     const item = data.item;
     const Paniers = data.Paniers;
@@ -95,8 +96,8 @@
         {/if}
     <!-- Boutons en bas de page -->
     <div class="block has-text-right">
-        <a href="/" class="button is-warning">Éditer cette fiche</a>
-        <ButtonLight url={"./"} texte={"Retour"}></ButtonLight>
+        <ButtonWarning url={`./edit/${item.id}`} texte={"Éditer cette fiche"}></ButtonWarning>
+        <Goback />
     </div>
 
 </div>

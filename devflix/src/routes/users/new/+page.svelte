@@ -3,19 +3,15 @@
     let erreur = null;
     async function handleSubmit(event)
     {
-        event.preventDefault();
         const formData = new FormData(event.target);
 
         const response = await fetch('?/new', {
             method: 'POST',
             body: formData
         });
-
         const result = await response.json();
-        //console.log(result);
-
         if (result.type == 'failure')
-        erreur = JSON.parse(result.data)[0];
+            erreur = JSON.parse(result.data)[0];
         else
             window.location.href = '/items';
     }

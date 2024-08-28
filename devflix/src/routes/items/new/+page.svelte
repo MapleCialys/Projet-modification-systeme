@@ -1,7 +1,7 @@
 <script>
 
   import H1Title from '$lib/components/h1Title.svelte';
-  import ButtonLight from '$lib/components/buttonLight.svelte';
+  import Goback from "$lib/components/goback.svelte";
 
 </script>
 
@@ -53,7 +53,7 @@
           <div class="field">
             <label class="label" for="image_item">Image du film</label>
             <div class="control">
-              <input class="input" type="file" placeholder="img file" name="image_item" id="image_item">
+              <input class="input" type="file" name="image_item" id="image_item">
             </div>
           </div>
         
@@ -69,8 +69,8 @@
       </div>
     </div>
     
-    <input type="submit" class="button is-primary" value="Ajouter">
-    <ButtonLight url={"./"} texte={"Retour"}></ButtonLight>
+    <input type="submit" class="button is-primary is-rounded" value="Ajouter">
+    <Goback />
 
   </form>
   </div>

@@ -4,6 +4,6 @@
     }
   </script>
   
-  <button class="button is-rounded" on:click={goBack}>
+  <button class="button is-light is-rounded" on:click={goBack}>
     Retour
   </button>
