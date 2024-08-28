@@ -3,6 +3,9 @@
     onMount(() => {
                 window.location.href='/';
     });
+    
 </script>
 
-<p>Déconnexion réussi. Redirection en cours</p>
+<div class="notification is-warning has-text-centered">
+    Déconnexion réussie, vous allez etre redirigés.
+</div>

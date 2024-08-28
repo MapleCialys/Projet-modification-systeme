@@ -4,7 +4,6 @@
 </script>
 <script context="module">
     export let cookie;
-    console.log(cookie);
 </script>
 <section class="hero is-fullheight header-image">
     <div class="hero-head is-right m-4">

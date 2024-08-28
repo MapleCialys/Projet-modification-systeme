@@ -100,12 +100,3 @@
     </div>
 
 </div>
-
-
-<style>
-    .video-container {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-    }
-</style>
