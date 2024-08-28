@@ -3,7 +3,7 @@
     export let data;
     
     const items = data.items;
-    const Paniers = data.Paniers;
+    const catalogue = data.catalogue;
 
     import H1Title from '$lib/components/h1Title.svelte';
 
@@ -33,10 +33,9 @@
                         <input type="checkbox">
                         <input type="number" name="id" id="id" value={item.id} readonly hidden>
                     </td>
-                    <td><figure class="image-container"><img src="{item.image_item}" alt="{item.nom}" class="miniature-image"/></figure></td>
-                    <td><p>Description : {item.description}</p></td>
+                    <td><figure class="image-container"><img src="../{item.movie.image_item}" alt="{item.movie.nom}" class="miniature-image"/></figure></td>
+                    <td><p>Description : {item.movie.description}</p></td>
                     <td>
-                        <i class="fa-solid fa-trash"></i>
                         <span class="icon"><i class="fa-solid fa-trash"></i></span>
                     </td>
                 </tr>

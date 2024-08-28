@@ -45,6 +45,23 @@ export async function findAll(){
 }
 
 /**
+ * Va chercher tout les items d'un panier specifique
+ * @param {Object} p_where Objet contenant le parametre à filtrer
+ * @returns Les données de la table
+ */
+export async function findAllInCart(p_where){
+    return await Items_Paniers.findAll({
+        where: p_where
+    }).then(resultat => {
+        return resultat.map(item_Paniers => item_Paniers.dataValues);
+    })
+    .catch((error)=>{
+        throw error;
+    });
+}
+
+
+/**
  * Find Item_Paniers
  *
  * @export
