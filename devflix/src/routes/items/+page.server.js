@@ -4,7 +4,7 @@ import { redirect } from "@sveltejs/kit";
 import { fail } from "@sveltejs/kit";
 import { newItemsPaniers } from "../../lib/db/controllers/items_paniers.controller.js";
 import { Paniers } from "../../lib/db/models/Paniers.model.js";
-import { findAll as findAllItemsPanier } from "../../lib/db/controllers/items_paniers.controller.js";
+import { findOne as findInCart } from "../../lib/db/controllers/items_paniers.controller.js";
 
 export async function load({params, cookies}) {
     const items = await findAll();
@@ -28,10 +28,9 @@ export const actions = {
         const id_user = user_data.users.dataValues.id;
         const panier_data = await Paniers.findOne({where:{user_id: id_user}});
         const panier_id = panier_data.dataValues.id;
-        const check = await findAllItemsPanier();
-        console.log(check);
+        const check = await findInCart({items_id: data.get("item")});
         try{
-            if(check != '')
+            if(check)
                 throw "Cet element est déjà dans votre panier."
             const res = await newItemsPaniers(data.get("item"), panier_id);
             return { success: true, res }

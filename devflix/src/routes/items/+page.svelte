@@ -97,7 +97,6 @@
                                 <input type="text" value="{item.id}" name="item" hidden>
                                 <button class="button is-primary is-rounded" type="submit">Ajouter au panier</button>
                             </form>
-                            <!-- <ButtonPrimary url={"./Paniers"} texte={"Ajouter au Paniers"}></ButtonPrimary> -->
                         </div>
                     </div>
 
@@ -107,3 +106,15 @@
     </div>
 
 </div>
+
+<style>
+    .content-image {
+    background-image: url("$lib/img/app/hero2blury.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #999;
+    
+}
+</style>

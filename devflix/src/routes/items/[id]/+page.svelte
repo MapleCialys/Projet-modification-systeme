@@ -1,14 +1,50 @@
 <script>
-
     export let data;
 
-    const item = data.item;
-    const Paniers = data.Paniers;
-
     import {formatDate} from '$lib/index.js';
-
     import H1Title from '$lib/components/h1Title.svelte';
     import ButtonLight from '$lib/components/buttonLight.svelte';
+    
+    const item = data.item;
+    const Paniers = data.Paniers;
+    let message = null;
+    let show = false;
+    let notif = null;
+    let admin = false;
+
+    async function ajoutPanier(event)
+    {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+
+        const response = await fetch('?/addToCart', {
+            method: 'POST',
+            body: formData
+        });
+
+        const result = await response.json();
+        console.log(result);
+        if (result.type == 'success')
+        {
+            message = "Article ajouté au panier.";
+            notif = "is-success";
+        }
+        else if (result.type == 'failure')
+        {
+            message = JSON.parse(result.data);
+            notif = "is-warning";
+        }
+    }
+
+    $: {
+      if (message) {
+        show = true;
+        setTimeout(() => {
+          show = false;
+          message = null;
+        }, 3000);
+      }
+    }
 
 </script>
 
@@ -19,7 +55,7 @@
         <div class="columns">
             <!-- First column -->
             <div class="column is-narrow">
-                <figure class="image-container"><img src="{item.image_item}" alt="{item.nom}" class="resized-image"/></figure>
+                <figure class="image-container"><img src="../{item.image_item}" alt="{item.nom}" class="resized-image"/></figure>
 
                 {#if item.bande_annonce} <!-- Ne pas affiché zone vidéo si bande_annonce est NULL -->
                     <div class="video-container">
@@ -42,13 +78,17 @@
                 <p>Description : {item.description}</p><br>
                 <p><strong>Quantité disponible :</strong> {item.quantite_disponible}</p><br>
 
-                <form method="POST" action="?/add">
-                    <input type="number" name="id" id="id" value={item.id} readonly hidden>
-                    <button type="submit" class="button is-primary">Ajouter au Paniers</button>
+                <form on:submit|preventDefault={ajoutPanier}>
+                    <input type="text" value="{item.id}" name="item" hidden>
+                    <button class="button is-primary is-rounded" type="submit">Ajouter au panier</button>
                 </form>
             </div>
           </div>
-    
+          {#if show}
+          <div class="notification {notif} has-text-centered">
+            {message}
+          </div>
+        {/if}
     <!-- Boutons en bas de page -->
     <div class="block has-text-right">
         <a href="/" class="button is-warning">Éditer cette fiche</a>

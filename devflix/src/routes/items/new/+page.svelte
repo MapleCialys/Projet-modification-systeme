@@ -9,7 +9,7 @@
   <H1Title title={"Ajouter un film"}></H1Title>
 
   <div class="box">
-    <form method="POST" action="?/new">
+    <form method="POST" action="?/new" enctype="multipart/form-data">
     <div class="columns">
       <!-- First column -->
       <div class="column">
@@ -53,7 +53,7 @@
           <div class="field">
             <label class="label" for="image_item">Image du film</label>
             <div class="control">
-              <input class="input" type="text" placeholder="img file" name="image_item" id="image_item">
+              <input class="input" type="file" placeholder="img file" name="image_item" id="image_item">
             </div>
           </div>
         

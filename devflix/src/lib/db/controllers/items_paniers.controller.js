@@ -60,12 +60,13 @@ export async function findOne(p_where){
         as: 'Paniers'
     }]})
     .then(res => {
-        return {
-            ...res.dataValues,
-            items: res.items ? res.items.dataValues : null,
-            ...res.dataValues,
-            Paniers: res.Paniers ? res.Paniers.dataValues : null
-        };
+        if(res)
+            return {
+                ...res.dataValues,
+                role: res.role ? res.role.dataValues : null
+            };
+            else
+                return null;
     }).catch((error) => {
         throw error;
     });
