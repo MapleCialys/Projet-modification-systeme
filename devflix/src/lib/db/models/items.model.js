@@ -26,7 +26,9 @@ export const Items = sequelize.define("items", {
         type: DataTypes.INTEGER,
         allowNull: false
     }
-});
+}, {
+    paranoid: true, // Permet à sequelize de faire de la soft-deletion
+}); 
 
 sequelize.sync().then(() => {
     console.log('Items table created successfully!');

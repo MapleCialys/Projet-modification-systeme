@@ -7,12 +7,17 @@
     import ButtonWarning from '$lib/components/buttonWarning.svelte';
     
     const item = data.item;
-    const Paniers = data.Paniers;
     let message = null;
     let show = false;
     let notif = null;
-    let admin = false;
+    let admin = item.admin;
+    
 
+    /**
+     * Gère l'ajout d'un article au panier.
+     * @param {Event} event - L'événement de soumission du formulaire.
+     * @returns {void}
+     */
     async function ajoutPanier(event)
     {
         event.preventDefault();
@@ -24,7 +29,6 @@
         });
 
         const result = await response.json();
-        console.log(result);
         if (result.type == 'success')
         {
             message = "Article ajouté au panier.";
@@ -37,6 +41,7 @@
         }
     }
 
+    /* Bloc pour afficher les notifications */
     $: {
       if (message) {
         show = true;
@@ -79,8 +84,16 @@
             
             <!-- Second column -->
             <div class="column">
+                {#if !item.date || item.date == 'Invalid Date'}
+                <p><strong>Date de sortie :</strong> Date inconnue</p><br>
+                {:else}
                 <p><strong>Date de sortie :</strong> {formatDate(item.date)}</p><br>
-                <p>Description : {item.description}</p><br>
+                {/if}
+                {#if item.description}
+                <p><strong>Description :</strong> {item.description}</p><br>
+                {:else}
+                <p><strong>Description :</strong> Synonpsis inconnu...</p><br>
+                {/if}
                 <p><strong>Quantité disponible :</strong> {item.quantite_disponible}</p><br>
 
                 <form on:submit|preventDefault={ajoutPanier}>
@@ -96,7 +109,9 @@
         {/if}
     <!-- Boutons en bas de page -->
     <div class="block has-text-right">
-        <ButtonWarning url={`./edit/${item.id}`} texte={"Éditer cette fiche"}></ButtonWarning>
+        {#if admin}
+            <ButtonWarning url={`./edit/${item.id}`} texte={"Éditer cette fiche"}></ButtonWarning>
+        {/if}
         <Goback />
     </div>
 

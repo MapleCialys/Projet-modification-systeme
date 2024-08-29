@@ -5,13 +5,13 @@ import { Sessions } from "../models/sessions.model";
 
 
 /**
- * Création d'un nouvel utilisateur
- *
- * @export
- * @param {String} p_nom
- * @param {String} p_prenom
- * @param {Number} p_role_id
- * @param {String} p_password
+ * Crée un nouvel utilisateur.
+ * @param {string} p_nom - Nom de l'utilisateur.
+ * @param {string} p_prenom - Prénom de l'utilisateur.
+ * @param {string} p_courriel - Adresse email de l'utilisateur.
+ * @param {number} p_role_id - ID du rôle de l'utilisateur.
+ * @param {string} p_password - Mot de passe de l'utilisateur.
+ * @returns {Object} - Les données de l'utilisateur créé.
  */
 export async function newUser(p_nom, p_prenom, p_courriel, p_role_id, p_password){
    try{
@@ -32,11 +32,8 @@ export async function newUser(p_nom, p_prenom, p_courriel, p_role_id, p_password
 }
 
 /**
- * Va chercher tous les utilisateurs
- *
- * @export
- * @async
- * @returns {Object}
+ * Récupère tous les utilisateurs avec leurs rôles.
+ * @returns {Object[]} - Liste des utilisateurs avec les données des rôles associés.
  */
 export async function findAll(){
     return await Users.findAll({
@@ -55,12 +52,9 @@ export async function findAll(){
 }
 
 /**
- * Find User
- *
- * @export
- * @async
- * @param {Object} p_where
- * @returns {Object}
+ * Récupère un utilisateur spécifique en fonction des conditions fournies.
+ * @param {Object} p_where - Conditions de filtrage pour l'utilisateur.
+ * @returns {Object|null} - Les données de l'utilisateur trouvé ou null.
  */
 export async function findOne(p_where){
     return await Users.findOne({ where: p_where, include: [{
@@ -81,14 +75,10 @@ export async function findOne(p_where){
 }
 
 /**
- * Authentification
- *
- * @export
- * @async
- * @param {String} p_nom
- * @param {String} p_prenom
- * @param {String} p_password
- * @returns {Object}
+ * Authentifie un utilisateur en vérifiant l'email et le mot de passe.
+ * @param {string} p_courriel - Adresse email de l'utilisateur.
+ * @param {string} p_password - Mot de passe de l'utilisateur.
+ * @returns {Object} - Les données de l'utilisateur authentifié.
  */
 export async function authenticate(p_courriel, p_password){
     try{

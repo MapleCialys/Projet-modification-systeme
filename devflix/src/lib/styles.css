@@ -4,6 +4,15 @@ body {
     background-color: initial !important;
     transform: initial !important;
     cursor: initial !important;
+    /* Pour le bon positionnement du footer */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+html {
+    height: 100%;
 }
 
 /* Marges pour la class block */
@@ -56,4 +65,18 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-color: #999;
+}
+
+/* Pour griser les input des formulaire si readonly */
+.readonly {
+    background-color: lightgray;
+}
+
+/* Affichage si pas de résultat pour une recherche */
+.no-results{
+    width: 100%;
+    display: flex;
+    padding: 20px;
+    font-size: 1.5rem;
+    background-color: lightgray;
 }

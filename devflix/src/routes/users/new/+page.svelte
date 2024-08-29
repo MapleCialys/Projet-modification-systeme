@@ -1,6 +1,12 @@
 <script>  
     import Goback from "../../../lib/components/goback.svelte";
     let erreur = null;
+
+    /**
+     * Gère la soumission du formulaire pour créer un nouvel élément.
+     * @param {Event} event - L'événement de soumission du formulaire.
+     * @returns {void}
+     */
     async function handleSubmit(event)
     {
         const formData = new FormData(event.target);
@@ -15,8 +21,6 @@
         else
             window.location.href = '/items';
     }
-    export let data;
-    console.log(data);
 </script>
 
 <section class="hero is-fullheight content-image">

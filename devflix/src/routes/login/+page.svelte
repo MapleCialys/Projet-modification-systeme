@@ -1,9 +1,14 @@
 <script>
     import Goback from "$lib/components/goback.svelte";
     let erreur = null;
+
+    /**
+    * Gère la soumission du formulaire de connexion.
+    * @param {Event} event - L'événement de soumission du formulaire.
+    * @returns {void}
+    */
     async function handleSubmit(event)
     {
-        event.preventDefault();
         const formData = new FormData(event.target);
 
         const response = await fetch('?/login', {
@@ -12,11 +17,15 @@
         });
 
         const result = await response.json();
+        const user_id = (JSON.parse(result.data)[3]);
 
         if (result.type == 'failure')
             erreur = JSON.parse(result.data)[0];
         else
-            window.location.href = '/items';
+        {
+          window.location.href = '/items';
+        }
+            
     }
 </script>
 

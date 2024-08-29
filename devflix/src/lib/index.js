@@ -1,8 +1,12 @@
 // place files you want to import through the `$lib` alias in this folder.
 import '$lib/styles.css';
 
-// Fonction pour modifier le format de date à JJ Mois AAAA
+/**
+ * Formate une chaîne de date en format `YYYY-MM-DD`.
+ * @param {string} dateString - La chaîne de date à formater.
+ * @returns {string} - La date formatée.
+ */
 export function formatDate(dateString) {
-    const options = { day: '2-digit', month: 'long', year: 'numeric' };
-    return new Date(dateString).toLocaleDateString('fr-FR', options);
+    const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+    return new Date(dateString).toLocaleDateString('fr-CA', options);
 }

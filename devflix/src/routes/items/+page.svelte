@@ -1,5 +1,4 @@
 <script>
-	import Logout from "$lib/components/logout.svelte";
     import {formatDate} from '$lib/index.js';
     import H1Title from '$lib/components/h1Title.svelte'
     import ButtonPrimary from '$lib/components/buttonPrimary.svelte';
@@ -17,6 +16,11 @@
     if(role == 1)
         admin = true;
 
+    /**
+     * Gère l'ajout d'un article au panier.
+     * @param {Event} event - L'événement de soumission du formulaire.
+     * @returns {void}
+     */
     async function ajoutPanier(event)
     {
         event.preventDefault();
@@ -28,7 +32,6 @@
         });
 
         const result = await response.json();
-        console.log(result);
         if (result.type == 'success')
         {
             message = "Article ajouté au panier.";
@@ -41,6 +44,7 @@
         }
     }
 
+    /* Bloc pour afficher la notification */
     $: {
       if (message) {
         show = true;
@@ -65,7 +69,6 @@
         {#if admin}
         <ButtonPrimary url={"/items/new"} texte={"Ajouter un film"}></ButtonPrimary>
         {/if}
-        <Logout />
     </div>
     
     <!-- Barre de recherche -->
@@ -83,6 +86,12 @@
 
     <!-- Grille avec cards pour chaque film -->
     <div class="grid is-col-min-10">
+    <!-- Condition si résultat de recherche vide -->
+    {#if items.filter(item => item.nom.toLowerCase().includes(searchQuery.toLowerCase())).length === 0}
+        <div class="no-results">
+            <p>Désolé, aucun résultat n'a été trouvé pour "{searchQuery}".</p>
+        </div>
+    {:else}
         {#each items.filter(item => item.nom.toLowerCase().includes(searchQuery.toLowerCase())) as item}
             <div class="cell is-flex">
                 <div class="card">
@@ -115,6 +124,7 @@
                 </div>
             </div>
         {/each}
+    {/if}
     </div>
 
 </div>
