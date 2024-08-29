@@ -8,6 +8,15 @@ import { sequelize } from "../lib/db/db";
 import { newUser } from "../lib/db/controllers/users.controller.js";
 import { newItem } from "../lib/db/controllers/items.controller.js";
 
+
+/**
+ * Chargement de la page
+ *
+ * @export
+ * @async
+ * @param {Object} cookies
+ * @returns {}
+ */
 export async function load({ cookies }) {
     await sequelize.sync();
     
@@ -29,6 +38,12 @@ export async function load({ cookies }) {
     return{};
 }
 
+
+/**
+ * Ajoute au catalogue une selection de base
+ *
+ * @async
+ */
 async function catalogueBase()
 {
     await newItem("La guerre des étoiles",
