@@ -1,10 +1,10 @@
-import { findAll } from "../../lib/db/controllers/items.controller";
-import { findOne } from "../../lib/db/controllers/sessions.controller.js";
+import { findAll } from "$lib/db/controllers/items.controller";
+import { findOne } from "$lib/db/controllers/sessions.controller.js";
 import { redirect } from "@sveltejs/kit";
 import { fail } from "@sveltejs/kit";
-import { newItemsPaniers } from "../../lib/db/controllers/items_paniers.controller.js";
-import { Paniers } from "../../lib/db/models/Paniers.model.js";
-import { findOne as findInCart } from "../../lib/db/controllers/items_paniers.controller.js";
+import { newItemsPaniers } from "$lib/db/controllers/items_paniers.controller.js";
+import { Paniers } from "$lib/db/models/Paniers.model.js";
+import { findOne as findInCart } from "$lib/db/controllers/items_paniers.controller.js";
 
 export async function load({params, cookies}) {
     const items = await findAll();

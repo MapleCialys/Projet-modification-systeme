@@ -1,5 +1,4 @@
 <script>
-	import Logout from "$lib/components/logout.svelte";
     import {formatDate} from '$lib/index.js';
     import H1Title from '$lib/components/h1Title.svelte'
     import ButtonPrimary from '$lib/components/buttonPrimary.svelte';
@@ -56,7 +55,8 @@
 
 </script>
 
-<div class="block content-image">
+<div class="block">
+    
     <H1Title title={"Catalogue de films"}></H1Title>
 
 
@@ -64,7 +64,6 @@
         {#if admin}
         <ButtonPrimary url={"/items/new"} texte={"Ajouter un film"}></ButtonPrimary>
         {/if}
-        <Logout />
     </div>
     
     <!-- Barre de recherche -->
