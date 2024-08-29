@@ -80,6 +80,12 @@
 
     <!-- Grille avec cards pour chaque film -->
     <div class="grid is-col-min-10">
+    <!-- Condition si résultat de recherche vide -->
+    {#if items.filter(item => item.nom.toLowerCase().includes(searchQuery.toLowerCase())).length === 0}
+        <div class="no-results">
+            <p>Désolé, aucun résultat n'a été trouvé pour "{searchQuery}".</p>
+        </div>
+    {:else}
         {#each items.filter(item => item.nom.toLowerCase().includes(searchQuery.toLowerCase())) as item}
             <div class="cell is-flex">
                 <div class="card">
@@ -112,6 +118,7 @@
                 </div>
             </div>
         {/each}
+    {/if}
     </div>
 
 </div>
