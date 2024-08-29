@@ -61,3 +61,39 @@ export async function findOne(p_where){
         throw error;
     });
 }
+
+
+/**
+ * Modification d'un item
+ *
+ * @export
+ * @param {Number} p_id
+ * @param {String} p_nom
+ * @param {String} p_description
+ * @param {String} p_image_item
+ * @param {String} p_bande_annonce
+ * @param {Date} p_date
+ * @param {Number} p_quantite_disponible
+ */
+export async function editItem(p_id, p_nom, p_description, p_image_item, p_bande_annonce, p_date, p_quantite_disponible) {
+    try {
+        const item = await Items.findByPk(p_id);
+        if (!item) {
+            throw new Error('Film not found');
+        }
+    
+        item.id = p_id;
+        item.nom = p_nom;
+        item.description = p_description;
+        item.image_item = p_image_item
+        item.bande_annonce = p_bande_annonce;
+        item.date = p_date;
+        item.quantite_disponible = p_quantite_disponible;
+
+        const updatedItem = await item.save();
+        return updatedItem.dataValues;
+
+    } catch (error) {
+        throw error;
+    }
+}
