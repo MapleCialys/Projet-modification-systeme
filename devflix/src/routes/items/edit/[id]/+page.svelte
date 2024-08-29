@@ -80,15 +80,16 @@
       
       <input type="submit" class="button is-warning is-rounded" value="Modifier">
       
-    </form>
+    </form><br>
 
     <form method="POST" action="?/delete">
       <input type="number" name="id" id="id" bind:value={item.id} required readonly hidden>
       <input type="submit" class="button is-danger is-rounded" value="Supprimer">
-    </form>
+    </form><br>
 
-    </div>
 
     <Goback />
+    
+    </div>
   
   </div>
