@@ -20,6 +20,13 @@ export async function load({params, cookies}) {
 
 export const actions = {
 
+    /**
+     * Ajoute un article au panier de l'utilisateur connecté.
+     *
+     * @param {Cookies} context.cookies
+     * @param {Request} context.request.
+     * @returns {<Object>}.
+     */
     addToCart: async({cookies, request}) => {
         const data = await request.formData();
         const session = cookies.get("session");
