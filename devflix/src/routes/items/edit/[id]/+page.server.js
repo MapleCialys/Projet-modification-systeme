@@ -1,7 +1,7 @@
 import { findOne } from "$lib/db/controllers/items.controller.js";
 import { findOne as findSession } from "$lib/db/controllers/sessions.controller.js";
 import { redirect } from "@sveltejs/kit";
-import { editItem } from "$lib/db/controllers/items.controller.js";
+import { editItem, deleteItem } from "$lib/db/controllers/items.controller.js";
 import { writeFile } from "fs/promises";
 import { extname } from "path";
 
@@ -34,6 +34,14 @@ export const actions = {
 
         // Redirection vers le catalogue
         throw redirect(303, "/items");
+    },
+
+    delete: async ({ params }) => {
+        await deleteItem(params.id);
+        return {
+            status: 200,
+            body: { message: 'Succès :Item supprimé' }
+        };
     }
 
 }

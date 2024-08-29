@@ -76,9 +76,16 @@
       </div>
       
       <input type="submit" class="button is-warning is-rounded" value="Modifier">
-      <Goback />
-  
+      
     </form>
+
+    <form method="POST" action="?/delete">
+      <input type="number" name="id" id="id" value={item.id} required readonly hidden>
+      <input type="submit" class="button is-danger is-rounded" value="Supprimer">
+    </form>
+
     </div>
+
+    <Goback />
   
   </div>
