@@ -2,6 +2,12 @@ import { authenticate } from "../../lib/db/controllers/users.controller";
 import { createCookie } from "../../lib/db/controllers/sessions.controller";
 import { fail } from '@sveltejs/kit';
 
+/**
+ * Gère la connexion d'un utilisateur.
+ * @param {Object} cookies - Les cookies de la requête.
+ * @param {Object} request - La requête.
+ * @returns {Object} - Résultat de la connexion.
+ */
 export const actions = {
 
     login: async({cookies, request}) => {
