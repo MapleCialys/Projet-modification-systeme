@@ -2,12 +2,12 @@ import { Items } from "../models/items.model";
 import { Items_Paniers } from "../models/items_paniers.model";
 import { Users } from "../models/users.model";
 
+
 /**
- * Création d'un nouveau items_Paniers
- *
- * @export
- * @param {Number} p_items_id
- * @param {Number} p_paniers_id
+ * Crée une nouvelle entrée dans la table Items_Paniers.
+ * @param {number} p_items_id - ID de l'item.
+ * @param {number} p_users_id - ID de l'utilisateur.
+ * @returns {Object} - Les données de la nouvelle entrée.
  */
 export async function newItemsPaniers(p_items_id, p_users_id){
     Items_Paniers.create({
@@ -23,11 +23,8 @@ export async function newItemsPaniers(p_items_id, p_users_id){
 }
 
 /**
- * Va chercher tous les items_Paniers
- *
- * @export
- * @async
- * @returns {Object}
+ * Récupère toutes les entrées dans la table Items_Paniers.
+ * @returns {Object[]} - Liste des entrées avec les données des items et paniers associés.
  */
 export async function findAll(){
     return await Items_Paniers.findAll({
@@ -44,9 +41,9 @@ export async function findAll(){
 }
 
 /**
- * Va chercher tout les items d'un panier specifique
- * @param {Object} p_where Objet contenant le parametre à filtrer
- * @returns Les données de la table
+ * Récupère tous les items dans un panier spécifique.
+ * @param {Object} p_where - Conditions de filtrage pour le panier.
+ * @returns {Object[]} - Liste des données des items dans le panier.
  */
 export async function findAllInCart(p_where){
     return await Items_Paniers.findAll({
@@ -61,12 +58,9 @@ export async function findAllInCart(p_where){
 
 
 /**
- * Find Item_Paniers
- *
- * @export
- * @async
- * @param {Object} p_where
- * @returns {Object}
+ * Récupère une entrée spécifique dans la table Items_Paniers.
+ * @param {Object} p_where - Conditions de filtrage pour l'entrée.
+ * @returns {Object|null} - Les données de l'entrée trouvée ou null.
  */
 export async function findOne(p_where){
     return await Items_Paniers.findOne({ where: p_where, include: [{
@@ -89,10 +83,9 @@ export async function findOne(p_where){
 }
 
 /**
- * Suppression panier
- *
- * @export
- * @param {Number} p_where
+ * Supprime les entrées dans la table Items_Paniers en fonction des conditions spécifiées.
+ * @param {Object} p_where - Conditions de suppression.
+ * @returns {Object} - Message de succès.
  */
 export async function deleteCart(p_where){
     return await Items_Paniers.destroy({ where: p_where })
