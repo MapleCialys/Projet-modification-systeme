@@ -17,7 +17,7 @@
       <div class="columns">
         <!-- First column -->
         <div class="column">
-            <input class="input" type="number" name="id" id="id" value={item.id} required readonly hidden>
+            <input type="number" name="id" id="id" value={item.id} required readonly hidden>
           
             <!-- Input 1 -->
             <div class="field">
