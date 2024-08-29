@@ -10,7 +10,7 @@ export const actions = {
             const auth = await authenticate(data.get("courriel"), data.get("password"));
             createCookie(auth.id, cookies);
             console.log("Connexion réussie : ", auth);
-            return { success: true, session: cookies.get("session")}
+            return { success: true, session: cookies.get("session"), auth: auth.id}
         }catch(error){
             console.log("Erreur lors de la connexion : ", error);
             return fail(401, error);

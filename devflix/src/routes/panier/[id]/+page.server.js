@@ -6,8 +6,8 @@ import { findOne as findMovie } from "../../../lib/db/controllers/items.controll
 import { deleteCart } from "../../../lib/db/controllers/items_paniers.controller.js";
 import { findOne } from "../../../lib/db/controllers/sessions.controller.js";
 
-export async function load({ params }){
-    const items = await findAllInCart({users_id: params.id})
+export async function load({ params, cookies }){
+    const items = await findAllInCart({users_id: params.id});
     let movie = null;
     for (const element of items) {
         movie = await findMovie({id: element.items_id});
@@ -20,14 +20,10 @@ export async function load({ params }){
 
 export const actions = {
 
-    deleteAll: async({ request, cookies })=>{
-
-        console.log("cookie => ",cookies.get('session'));
+    deleteAll: async({ cookies })=>{
         
-        const data = await request.formData();
         const cookie = await findOne({uuid: cookies.get('session')});
-        
-        
+    
         try{
             const result = await deleteCart({users_id: cookie.user_id});
             console.log(result);
