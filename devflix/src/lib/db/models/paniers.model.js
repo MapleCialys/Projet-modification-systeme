@@ -18,5 +18,5 @@ Paniers.belongsTo(Users, { foreignKey: 'user_id', as: 'users' });
 sequelize.sync().then(() => {
     console.log('Paniers table created successfully!');
 }).catch((error) => {
-    console.error('Paniers to create table : ', error);
+    console.error('Unable to create table : ', error);
 });

@@ -3,9 +3,6 @@
     export let data;
 
     const roles = data.roles;
-
-    //console.log(roles)
-
 </script>
 
 <h1>Roles</h1>
