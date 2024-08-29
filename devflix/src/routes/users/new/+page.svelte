@@ -21,7 +21,6 @@
         else
             window.location.href = '/items';
     }
-    export let data;
 </script>
 
 <section class="hero is-fullheight content-image">

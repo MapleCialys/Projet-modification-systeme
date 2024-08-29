@@ -21,7 +21,7 @@ export async function load({params, cookies}) {
         return { items:items, user: id_user.users.dataValues };
     }
     else
-    return { items:items }
+    throw redirect(302, '/');
 }
 
 export const actions = {

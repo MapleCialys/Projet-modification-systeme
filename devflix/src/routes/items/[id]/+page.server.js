@@ -3,6 +3,8 @@ import { findOne as findSession } from "$lib/db/controllers/sessions.controller.
 import { fail } from "@sveltejs/kit";
 import { newItemsPaniers } from "$lib/db/controllers/items_paniers.controller.js";
 import { findOne as findInCart } from "$lib/db/controllers/items_paniers.controller.js";
+
+
 export async function load({ params }){
     const item = await findOne({id:params.id});
     return { item:item }
