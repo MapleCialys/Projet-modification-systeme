@@ -7,11 +7,11 @@
     import ButtonWarning from '$lib/components/buttonWarning.svelte';
     
     const item = data.item;
-    const Paniers = data.Paniers;
     let message = null;
     let show = false;
     let notif = null;
-    let admin = false;
+    let admin = item.admin;
+    
 
     /**
      * Gère l'ajout d'un article au panier.
@@ -109,7 +109,9 @@
         {/if}
     <!-- Boutons en bas de page -->
     <div class="block has-text-right">
-        <ButtonWarning url={`./edit/${item.id}`} texte={"Éditer cette fiche"}></ButtonWarning>
+        {#if admin}
+            <ButtonWarning url={`./edit/${item.id}`} texte={"Éditer cette fiche"}></ButtonWarning>
+        {/if}
         <Goback />
     </div>
 

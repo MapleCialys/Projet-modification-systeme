@@ -3,8 +3,14 @@ import { findOne as findSession } from "$lib/db/controllers/sessions.controller.
 import { fail } from "@sveltejs/kit";
 import { newItemsPaniers } from "$lib/db/controllers/items_paniers.controller.js";
 import { findOne as findInCart } from "$lib/db/controllers/items_paniers.controller.js";
-export async function load({ params }){
+
+
+export async function load({ params, cookies }){
+    const session = cookies.get("session");
+    const user_data = await findSession({uuid: session});
+    const role_user = user_data.users.dataValues.role_id;    
     const item = await findOne({id:params.id});
+    item.admin = role_user == 1 ? true : false;
     return { item:item }
 }
 
@@ -22,8 +28,6 @@ export const actions = {
         const session = cookies.get("session");
         const user_data = await findSession({uuid: session});
         const id_user = user_data.users.dataValues.id;
-        // const panier_data = await Paniers.findOne({where:{user_id: id_user}});
-        // const panier_id = panier_data.dataValues.id;
         const check = await findInCart({items_id: data.get("item")});
         try{
             if(check)

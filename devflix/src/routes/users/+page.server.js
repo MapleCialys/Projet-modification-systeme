@@ -11,6 +11,8 @@ import { redirect } from "@sveltejs/kit";
 export async function load({params, cookies}) {
     const users = await findAll();
     const session = cookies.get("session");
+    if (!session)
+        throw redirect(302, '/');
     const id_user = await findOne({uuid: session});
     if(id_user.users.dataValues.role_id != 1)
     {
