@@ -4,6 +4,12 @@ import { redirect } from "@sveltejs/kit";
 import { writeFile } from "fs/promises";
 import { extname } from "path";
 
+/**
+ * Charge les données pour la page, vérifie le rôle de l'utilisateur.
+ * @param {Object} params - Les paramètres de la requête.
+ * @param {Object} cookies - Les cookies de la requête.
+ * @returns {Object} - Les données utilisateur.
+ */
 export async function load({params, cookies}) {
     const session = cookies.get("session");
     const id_user = await findOne({uuid: session});
@@ -15,6 +21,12 @@ export async function load({params, cookies}) {
     return { user: id_user.users.dataValues };
 }
 
+/**
+ * Gère la création d'un nouvel élément.
+ * @param {Object} cookies - Les cookies de la requête.
+ * @param {Object} request - La requête.
+ * @returns {void}
+ */
 export const actions = {
 
     new: async({ cookies, request })=>{
