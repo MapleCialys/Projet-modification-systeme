@@ -13,6 +13,12 @@
     let notif = null;
     let admin = false;
 
+     /**
+     * Ajoute au panier
+     *
+     * @async
+     * @param {Object} event
+     */
     async function ajoutPanier(event)
     {
         event.preventDefault();
@@ -36,6 +42,7 @@
         }
     }
 
+    /* Bloc pour afficher les notifications */
     $: {
       if (message) {
         show = true;
