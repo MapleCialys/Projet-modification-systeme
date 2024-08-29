@@ -5,13 +5,10 @@ import { Sessions } from "../models/sessions.model";
 
 
 /**
- * Créer un cookie
- *
- * @export
- * @async
- * @param {Object} p_user_id
- * @param {Object} p_cookies
- * @returns {Object}
+ * Crée un cookie de session et une entrée correspondante dans la table Sessions.
+ * @param {number} p_user_id - ID de l'utilisateur.
+ * @param {Object} p_cookies - Objet des cookies pour la requête.
+ * @returns {Object} - Les données de la session créée.
  */
 export async function createCookie(p_user_id, p_cookies)
 {
@@ -37,12 +34,9 @@ export async function createCookie(p_user_id, p_cookies)
 
 
 /**
- * Supprime le cookie de session et l'entrée dans la table Sessions
- *
- * @export
- * @async
- * @param {Object} p_cookie
- * @returns {Object}
+ * Supprime le cookie de session et l'entrée correspondante dans la table Sessions.
+ * @param {Object} p_cookie - Objet des cookies pour la requête.
+ * @returns {Object} - Message de succès.
  */
 export async function deleteCookie(p_cookie)
 {
@@ -58,12 +52,9 @@ export async function deleteCookie(p_cookie)
 }
 
 /**
- * Find Session
- *
- * @export
- * @async
- * @param {Object} p_where
- * @returns {Object}
+ * Récupère une session spécifique en fonction des conditions fournies.
+ * @param {Object} p_where - Conditions de filtrage pour la session.
+ * @returns {Object|null} - Les données de la session trouvée ou null.
  */
 export async function findOne(p_where){
     return await Sessions.findOne({ where: p_where, include: [{
