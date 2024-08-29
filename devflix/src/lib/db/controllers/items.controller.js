@@ -31,6 +31,7 @@ export async function newItem(p_nom, p_description, p_image_item, p_bande_annonc
 
 /**
  * Va chercher tous les items
+ * Sequelize exclut automatiquement les enregistrements supprimés avec paranoid
  *
  * @export
  * @async
@@ -92,6 +93,28 @@ export async function editItem(p_id, p_nom, p_description, p_image_item, p_bande
 
         const updatedItem = await item.save();
         return updatedItem.dataValues;
+
+    } catch (error) {
+        throw error;
+    }
+}
+
+/**
+ * Suppression soft d'un item avec paranoid
+ *
+ * @export
+ * @param {Number} p_id
+ */
+export async function deleteItem(p_id) {
+    try {
+        const item = await Items.findByPk(p_id);
+        if (!item) {
+            throw new Error('Item non trouvé');
+        }
+
+        await item.destroy();
+        
+        return { message: 'Succès :Item supprimé' };
 
     } catch (error) {
         throw error;
