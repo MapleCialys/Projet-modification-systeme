@@ -10,6 +10,11 @@
 
     import H1Title from '$lib/components/h1Title.svelte';
 
+    /**
+     * Gère la suppression de tous les éléments du panier.
+     * @param {Event} event - L'événement de soumission du formulaire.
+     * @returns {void}
+     */
     async function handleDeleteAll(event)
     {
         const formData = new FormData(event.target);
@@ -22,7 +27,12 @@
         const result = await response.json();
         items = [];
     }
-    
+
+    /**
+     * Gère la suppression d'un élément spécifique du panier.
+     * @param {Event} event - L'événement de soumission du formulaire.
+     * @returns {void}
+     */
     async function handleDeleteOne(event)
     {
         const formData = new FormData(event.target);
