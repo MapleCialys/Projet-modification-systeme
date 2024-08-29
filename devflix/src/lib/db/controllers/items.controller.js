@@ -2,15 +2,14 @@ import { Items } from "../models/items.model";
 
 
 /**
- * Création d'un nouvel item
- *
- * @export
- * @param {String} p_nom
- * @param {String} p_description
- * @param {String} p_image_item
- * @param {String} p_bande_annonce
- * @param {Date} p_date
- * @param {Number} p_quantite_disponible
+ * Crée un nouvel item.
+ * @param {string} p_nom - Nom de l'item.
+ * @param {string} p_description - Description de l'item.
+ * @param {string} p_image_item - URL de l'image de l'item.
+ * @param {string} p_bande_annonce - URL de la bande annonce de l'item.
+ * @param {Date} p_date - Date associée à l'item.
+ * @param {number} p_quantite_disponible - Quantité disponible de l'item.
+ * @returns {Object} - Les données de l'item créé.
  */
 export async function newItem(p_nom, p_description, p_image_item, p_bande_annonce, p_date, p_quantite_disponible){
     Items.create({
@@ -30,12 +29,8 @@ export async function newItem(p_nom, p_description, p_image_item, p_bande_annonc
 }
 
 /**
- * Va chercher tous les items
- * Sequelize exclut automatiquement les enregistrements supprimés avec paranoid
- *
- * @export
- * @async
- * @returns {Object}
+ * Récupère tous les items.
+ * @returns {Object[]} - Liste des items.
  */
 export async function findAll(){
     return await Items.findAll().then(resultat => {
@@ -47,12 +42,9 @@ export async function findAll(){
 }
 
 /**
- * Find Item
- *
- * @export
- * @async
- * @param {Object} p_where
- * @returns {Object}
+ * Récupère un item spécifique.
+ * @param {Object} p_where - Conditions de recherche de l'item.
+ * @returns {Object} - Les données de l'item trouvé.
  */
 export async function findOne(p_where){
     return await Items.findOne({ where: p_where })
@@ -65,16 +57,15 @@ export async function findOne(p_where){
 
 
 /**
- * Modification d'un item
- *
- * @export
- * @param {Number} p_id
- * @param {String} p_nom
- * @param {String} p_description
- * @param {String} p_image_item
- * @param {String} p_bande_annonce
- * @param {Date} p_date
- * @param {Number} p_quantite_disponible
+ * Modifie un item existant.
+ * @param {number} p_id - ID de l'item à modifier.
+ * @param {string} p_nom - Nouveau nom de l'item.
+ * @param {string} p_description - Nouvelle description de l'item.
+ * @param {string} p_image_item - Nouvelle URL de l'image de l'item.
+ * @param {string} p_bande_annonce - Nouvelle URL de la bande annonce de l'item.
+ * @param {Date} p_date - Nouvelle date associée à l'item.
+ * @param {number} p_quantite_disponible - Nouvelle quantité disponible de l'item.
+ * @returns {Object} - Les données de l'item mis à jour.
  */
 export async function editItem(p_id, p_nom, p_description, p_image_item, p_bande_annonce, p_date, p_quantite_disponible) {
     try {
@@ -100,10 +91,9 @@ export async function editItem(p_id, p_nom, p_description, p_image_item, p_bande
 }
 
 /**
- * Suppression soft d'un item avec paranoid
- *
- * @export
- * @param {Number} p_id
+ * Supprime un item avec la fonctionnalité paranoid.
+ * @param {number} p_id - ID de l'item à supprimer.
+ * @returns {Object} - Message de succès.
  */
 export async function deleteItem(p_id) {
     try {

@@ -5,6 +5,12 @@ import { fail } from "@sveltejs/kit";
 import { newItemsPaniers } from "$lib/db/controllers/items_paniers.controller.js";
 import { findOne as findInCart } from "$lib/db/controllers/items_paniers.controller.js";
 
+/**
+ * Charge les éléments et les détails de l'utilisateur en fonction du cookie de session.
+ * @param {Object} params - Les paramètres de la requête.
+ * @param {Object} cookies - Les cookies de la requête.
+ * @returns {Object} - Les éléments et les détails de l'utilisateur (si connecté).
+ */
 export async function load({params, cookies}) {
     const items = await findAll();
     const session = cookies.get("session");
