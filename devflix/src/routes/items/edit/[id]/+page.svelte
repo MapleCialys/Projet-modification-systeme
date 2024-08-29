@@ -17,7 +17,7 @@
       <div class="columns">
         <!-- First column -->
         <div class="column">
-            <input type="number" name="id" id="id" value={item.id} required readonly hidden>
+            <input type="number" name="id" id="id" bind:value={item.id} required readonly hidden>
           
             <!-- Input 1 -->
             <div class="field">
@@ -59,7 +59,10 @@
             <div class="field">
               <label class="label" for="image_item">Image du film</label>
               <div class="control">
-                <input class="input" type="file" name="image_item" id="image_item" value="{item.image_item}">
+                <!-- Consulter les informations actuelles -->
+                <input class="input readonly" type="text" name="image_item" id="image_item" bind:value="{item.image_item}" readonly>
+                <!-- Pouvoir mettre un nouveau fichier -->
+                <input class="input" type="file" name="new_image_item" id="new_image_item">
               </div>
             </div>
           
@@ -77,15 +80,16 @@
       
       <input type="submit" class="button is-warning is-rounded" value="Modifier">
       
-    </form>
+    </form><br>
 
     <form method="POST" action="?/delete">
-      <input type="number" name="id" id="id" value={item.id} required readonly hidden>
+      <input type="number" name="id" id="id" bind:value={item.id} required readonly hidden>
       <input type="submit" class="button is-danger is-rounded" value="Supprimer">
-    </form>
+    </form><br>
 
-    </div>
 
     <Goback />
+    
+    </div>
   
   </div>
