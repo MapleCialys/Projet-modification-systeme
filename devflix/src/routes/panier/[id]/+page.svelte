@@ -7,6 +7,7 @@
     if(items[0])
     panier_id = items[0].Paniers_id;
 
+
     import H1Title from '$lib/components/h1Title.svelte';
 
     async function handleDeleteAll(event)

@@ -4,7 +4,6 @@ import { findAll } from "../../../lib/db/controllers/roles.controller";
 import { createCookie } from "../../../lib/db/controllers/sessions.controller";
 import { fail } from '@sveltejs/kit';
 import { findOne } from "../../../lib/db/controllers/sessions.controller";
-import { newPaniers } from "../../../lib/db/controllers/Paniers.controller.js";
 
 
 export async function load({params, cookies}) {
@@ -25,7 +24,6 @@ export const actions = {
         try {
             let res = await newUser(data.get("nom"), data.get("prenom"), data.get("courriel"), "2", data.get("password"));
             createCookie(res.id, cookies);
-            newPaniers(res.id);
         }catch(error){
             return fail(401, error);
         }
