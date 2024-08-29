@@ -6,6 +6,12 @@ import { findOne as findMovie } from "../../../lib/db/controllers/items.controll
 import { deleteCart } from "../../../lib/db/controllers/items_paniers.controller.js";
 import { findOne } from "../../../lib/db/controllers/sessions.controller.js";
 
+/**
+ * Charge les éléments du panier de l'utilisateur avec les détails du film.
+ * @param {Object} params - Les paramètres de la requête.
+ * @param {Object} cookies - Les cookies de la requête.
+ * @returns {Object} - Les éléments du panier avec les détails du film.
+ */
 export async function load({ params, cookies }){
     const items = await findAllInCart({users_id: params.id});
     let movie = null;
@@ -20,6 +26,11 @@ export async function load({ params, cookies }){
 
 export const actions = {
 
+    /**
+    * Supprime tous les éléments du panier de l'utilisateur.
+    * @param {Object} cookies - Les cookies de la requête.
+    * @returns {void}
+    */
     deleteAll: async({ cookies })=>{
         
         const cookie = await findOne({uuid: cookies.get('session')});
@@ -32,6 +43,12 @@ export const actions = {
         }  
     },
 
+    /**
+    * Supprime un élément spécifique du panier.
+    * @param {Object} params - Les paramètres de la requête.
+    * @param {Object} request - La requête.
+    * @returns {void}
+    */
     deleteOne: async({ params, request }) => {
 
         const data = await request.formData();
@@ -44,6 +61,12 @@ export const actions = {
         }
     },
 
+    /**
+    * Met à jour les éléments du panier de l'utilisateur avec les détails du film.
+    * @param {Object} params - Les paramètres de la requête.
+    * @param {Object} cookies - Les cookies de la requête.
+    * @returns {Object} - Les éléments du panier avec les détails du film.
+    */
     majCart: async ({ params, cookies }) => {
         const items = await findAllInCart({users_id: params.id});
         let movie = null;
