@@ -5,6 +5,13 @@ import { editItem, deleteItem } from "$lib/db/controllers/items.controller.js";
 import { writeFile } from "fs/promises";
 import { extname } from "path";
 
+/**
+ * Charge les détails d'un item et vérifie les autorisations de l'utilisateur.
+ *
+ * @param {Object} params - Les paramètres de la requête, incluant l'ID de l'item.
+ * @param {Cookies} cookies - Les cookies de la requête pour gérer la session utilisateur.
+ * @returns {<Object>} - Les détails de l'item et les données de l'utilisateur si autorisé.
+ */
 export async function load({params, cookies}) {
     const item = await findOne({id:params.id});
     const session = cookies.get("session");
@@ -19,6 +26,13 @@ export async function load({params, cookies}) {
 
 export const actions = {
 
+     /**
+     * Édite les détails d'un item, y compris la gestion des fichiers image.
+     *
+     * @param {Cookies} cookies - Les cookies de la requête pour la gestion de session.
+     * @param {Request} request - L'objet de requête contenant les données du formulaire.
+     * @throws {Redirect} - Redirige vers la page des items après modification.
+     */
     edit: async({ cookies, request })=>{
         const data = await request.formData();
         const file = data.get('image_item');
@@ -36,6 +50,12 @@ export const actions = {
         throw redirect(303, "/items");
     },
 
+    /**
+     * Supprime un item basé sur son identifiant.
+     *
+     * @param {Object} params - Les paramètres de la requête, incluant l'ID de l'item à supprimer.
+     * @returns {<Object>} - Un message de succès après la suppression.
+     */
     delete: async ({ params }) => {
         await deleteItem(params.id);
         return {
