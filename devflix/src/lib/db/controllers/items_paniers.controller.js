@@ -88,6 +88,12 @@ export async function findOne(p_where){
     });
 }
 
+/**
+ * Suppression panier
+ *
+ * @export
+ * @param {Number} p_where
+ */
 export async function deleteCart(p_where){
     return await Items_Paniers.destroy({ where: p_where })
     .then(res => {
