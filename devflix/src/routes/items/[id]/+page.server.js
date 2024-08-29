@@ -1,5 +1,5 @@
 import { findOne } from "$lib/db/controllers/items.controller.js";
-import { findOne as findSession } from "../../../lib/db/controllers/sessions.controller.js";
+import { findOne as findSession } from "$lib/db/controllers/sessions.controller.js";
 import { fail } from "@sveltejs/kit";
 import { newItemsPaniers } from "$lib/db/controllers/items_paniers.controller.js";
 import { Paniers } from "$lib/db/models/Paniers.model.js";
