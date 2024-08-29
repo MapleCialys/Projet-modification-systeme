@@ -26,11 +26,12 @@ L'équipe est copmposée de
 ## Instructions d'installation
 - Entrez les lignes de commande :
     ```javascript
-        npm create svelte@latest devflix
-        cd devflix
-        npm install
-        npm install --save sequelize
-        npm install --save sqlite3
-        npm i bcrypt
-        npm run dev -- --open
+    npm create svelte@latest devflix
+    cd devflix
+    npm install
+    npm install --save sequelize
+    npm install --save sqlite3
+    npm i bcrypt
+    npm install --save-dev @babel/preset-env babel-jest jest svelte-jester
+    npm run dev -- --open
     ```
