@@ -3,7 +3,6 @@
     let erreur = null;
     async function handleSubmit(event)
     {
-        event.preventDefault();
         const formData = new FormData(event.target);
 
         const response = await fetch('?/login', {

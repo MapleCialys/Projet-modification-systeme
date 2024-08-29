@@ -24,7 +24,6 @@
         });
 
         const result = await response.json();
-        console.log(result);
         if (result.type == 'success')
         {
             message = "Article ajouté au panier.";

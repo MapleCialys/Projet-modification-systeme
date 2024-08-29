@@ -7,9 +7,6 @@
     export let data;
 
     const users = data.users;
-
-    //console.log(users)
-
 </script>
 
 <div class="block">
