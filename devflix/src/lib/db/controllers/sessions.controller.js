@@ -3,6 +3,16 @@ import { Users } from "../models/users.model";
 import { Roles } from "../models/roles.model";
 import { Sessions } from "../models/sessions.model";
 
+
+/**
+ * Créer un cookie
+ *
+ * @export
+ * @async
+ * @param {Object} p_user_id
+ * @param {Object} p_cookies
+ * @returns {Object}
+ */
 export async function createCookie(p_user_id, p_cookies)
 {
     let uuid = crypto.randomUUID();
@@ -25,6 +35,15 @@ export async function createCookie(p_user_id, p_cookies)
     });
 }
 
+
+/**
+ * Supprime le cookie de session et l'entrée dans la table Sessions
+ *
+ * @export
+ * @async
+ * @param {Object} p_cookie
+ * @returns {Object}
+ */
 export async function deleteCookie(p_cookie)
 {
     let uuid = p_cookie.get('session');
@@ -39,7 +58,7 @@ export async function deleteCookie(p_cookie)
 }
 
 /**
- * Find User
+ * Find Session
  *
  * @export
  * @async
