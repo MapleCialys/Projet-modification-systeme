@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 import { sequelize } from '../db.js';
 import { Items } from './items.model.js';
-import { Paniers } from './Paniers.model.js';
+import { Users } from './users.model.js';
 
 export const Items_Paniers = sequelize.define("items_Paniers", {
     items_id: {
@@ -12,10 +12,10 @@ export const Items_Paniers = sequelize.define("items_Paniers", {
         },
         allowNull: false
     },
-    Paniers_id: {
+    users_id: {
         type: DataTypes.INTEGER,
         references: {
-            model: Paniers,
+            model: Users,
             key: "id"
         },
         allowNull: false
@@ -23,7 +23,7 @@ export const Items_Paniers = sequelize.define("items_Paniers", {
 });
 
 Items_Paniers.belongsTo(Items, { foreignKey: 'items_id', as: 'items' });
-Items_Paniers.belongsTo(Paniers, { foreignKey: 'Paniers_id', as: 'Paniers' });
+Items_Paniers.belongsTo(Users, { foreignKey: 'users_id', as: 'users' });
 
 sequelize.sync().then(() => {
     console.log('Items_Paniers table created successfully!');

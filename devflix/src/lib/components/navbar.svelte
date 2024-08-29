@@ -13,7 +13,7 @@
       menu.classList.toggle('is-active');
     });
   });
-
+  
 </script>
 
 <nav class="navbar is-black" aria-label="main navigation">
@@ -46,7 +46,7 @@
         <div class="buttons">
           <Logout />
           
-          <a class="has-text-white" href="#">
+          <a class="has-text-white" href="/panier/">
             <i class="fa-solid fa-xl fa-cart-shopping"></i>
           </a>
         </div>

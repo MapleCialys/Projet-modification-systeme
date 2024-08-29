@@ -11,11 +11,15 @@
         });
 
         const result = await response.json();
+        const user_id = (JSON.parse(result.data)[3]);
 
         if (result.type == 'failure')
             erreur = JSON.parse(result.data)[0];
         else
-            window.location.href = '/items';
+        {
+          window.location.href = '/items';
+        }
+            
     }
 </script>
 
