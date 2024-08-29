@@ -78,8 +78,16 @@
             
             <!-- Second column -->
             <div class="column">
+                {#if !item.date || item.date == 'Invalid Date'}
+                <p><strong>Date de sortie :</strong> Date inconnue</p><br>
+                {:else}
                 <p><strong>Date de sortie :</strong> {formatDate(item.date)}</p><br>
-                <p>Description : {item.description}</p><br>
+                {/if}
+                {#if item.description}
+                <p><strong>Description :</strong> {item.description}</p><br>
+                {:else}
+                <p><strong>Description :</strong> Synonpsis inconnu...</p><br>
+                {/if}
                 <p><strong>Quantité disponible :</strong> {item.quantite_disponible}</p><br>
 
                 <form on:submit|preventDefault={ajoutPanier}>
