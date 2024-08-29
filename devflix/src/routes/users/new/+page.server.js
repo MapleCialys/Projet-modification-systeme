@@ -5,7 +5,12 @@ import { createCookie } from "../../../lib/db/controllers/sessions.controller";
 import { fail } from '@sveltejs/kit';
 import { findOne } from "../../../lib/db/controllers/sessions.controller";
 
-
+/**
+ * Charge les données utilisateur en fonction du cookie de session.
+ * @param {Object} params - Les paramètres de la requête.
+ * @param {Object} cookies - Les cookies de la requête.
+ * @returns {Object} - Les données utilisateur sous forme de chaîne JSON.
+ */
 export async function load({params, cookies}) {
     const session = cookies.get("session");
     let id_user = null ;
@@ -18,6 +23,12 @@ export async function load({params, cookies}) {
 
 export const actions = {
 
+    /**
+     * Crée un nouvel utilisateur et configure le cookie de session.
+     * @param {Object} cookies - Les cookies de la requête.
+     * @param {Object} request - La requête.
+     * @returns {void}
+     */
     new: async({ cookies, request })=>{
         const data = await request.formData();
 
