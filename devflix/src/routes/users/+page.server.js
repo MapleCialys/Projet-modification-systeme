@@ -2,6 +2,12 @@ import { findAll } from "$lib/db/controllers/users.controller.js";
 import { findOne } from "$lib/db/controllers/sessions.controller.js";
 import { redirect } from "@sveltejs/kit";
 
+/**
+ * Charge tous les utilisateurs et vérifie le rôle de l'utilisateur connecté.
+ * @param {Object} params - Les paramètres de la requête.
+ * @param {Object} cookies - Les cookies de la requête.
+ * @returns {Object} - La liste des utilisateurs et les détails de l'utilisateur connecté.
+ */
 export async function load({params, cookies}) {
     const users = await findAll();
     const session = cookies.get("session");
