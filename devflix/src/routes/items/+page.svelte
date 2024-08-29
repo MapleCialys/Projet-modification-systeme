@@ -16,6 +16,12 @@
     if(role == 1)
         admin = true;
 
+    /**
+     * Ajoute au panier
+     *
+     * @async
+     * @param {Object} event
+     */
     async function ajoutPanier(event)
     {
         event.preventDefault();
@@ -39,6 +45,7 @@
         }
     }
 
+    /* Bloc pour afficher la notification */
     $: {
       if (message) {
         show = true;
