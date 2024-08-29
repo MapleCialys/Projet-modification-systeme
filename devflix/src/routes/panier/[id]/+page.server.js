@@ -29,8 +29,29 @@ export const actions = {
             console.log(result);
         }catch(error){
             console.log(error);
+        }  
+    },
+
+    deleteOne: async({ params, request }) => {
+
+        const data = await request.formData();
+
+        try{
+            const result = await deleteCart({ id: data.get('movie_id')});
+            console.log(result);   
+        }catch(error){
+            console.log(error); 
         }
-        
+    },
+
+    majCart: async ({ params, cookies }) => {
+        const items = await findAllInCart({users_id: params.id});
+        let movie = null;
+        for (const element of items) {
+            movie = await findMovie({id: element.items_id});
+            element.movie = movie;
+        }
+        return { items:items }
     }
 
 }

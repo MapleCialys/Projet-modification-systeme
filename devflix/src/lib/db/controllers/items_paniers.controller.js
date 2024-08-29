@@ -89,8 +89,6 @@ export async function findOne(p_where){
 }
 
 export async function deleteCart(p_where){
-    console.log(p_where);
-    
     return await Items_Paniers.destroy({ where: p_where })
     .then(res => {
         return {message: "Panier vidé avec succes."};
