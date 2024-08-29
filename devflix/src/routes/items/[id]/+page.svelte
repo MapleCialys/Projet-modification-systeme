@@ -13,11 +13,10 @@
     let notif = null;
     let admin = false;
 
-     /**
-     * Ajoute au panier
-     *
-     * @async
-     * @param {Object} event
+    /**
+     * Gère l'ajout d'un article au panier.
+     * @param {Event} event - L'événement de soumission du formulaire.
+     * @returns {void}
      */
     async function ajoutPanier(event)
     {
