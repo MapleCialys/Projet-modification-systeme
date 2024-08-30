@@ -1,7 +1,5 @@
 import { DataTypes } from 'sequelize';
-import bcrypt from 'bcrypt';
 import { sequelize } from '../db.js';
-import { Roles } from './roles.model.js';
 import { Users } from './users.model.js';
 
 export const Sessions = sequelize.define("sessions", {

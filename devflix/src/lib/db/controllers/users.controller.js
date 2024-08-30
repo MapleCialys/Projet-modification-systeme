@@ -1,7 +1,6 @@
 import bcrypt from 'bcrypt';
 import { Users } from "../models/users.model";
 import { Roles } from "../models/roles.model";
-import { Sessions } from "../models/sessions.model";
 
 
 /**
@@ -83,7 +82,6 @@ export async function findOne(p_where){
 export async function authenticate(p_courriel, p_password){
     try{
 
-        //Trouver l'utilisateur :
         const user = await findOne({ courriel: p_courriel});
 
         if(!user) throw "Utilisateur non trouvé";
@@ -95,6 +93,27 @@ export async function authenticate(p_courriel, p_password){
         return user;
 
     }catch(error){
+        throw error;
+    }
+}
+
+/**
+ * Supprime un utilisateur avec la fonctionnalité paranoid.
+ * @param {number} p_id - ID de l'item à supprimer.
+ * @returns {Object} - Message de succès.
+ */
+export async function deleteUser(p_id) {
+    try {
+        const user = await Users.findByPk(p_id);
+        if (!user) {
+            throw new Error('User non trouvé');
+        }
+
+        await user.destroy();
+        
+        return { message: 'Succès :User supprimé' };
+
+    } catch (error) {
         throw error;
     }
 }

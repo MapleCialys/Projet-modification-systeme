@@ -4,7 +4,7 @@
     import Footer from '$lib/components/footer.svelte';
 </script>
 <script context="module">
-    export let cookie;
+   export let cookie;
 </script>
 <section class="hero is-fullheight header-image">
     <div class="hero-head is-right m-4">

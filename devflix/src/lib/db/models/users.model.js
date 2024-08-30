@@ -28,6 +28,8 @@ export const Users = sequelize.define("users", {
         },
         allowNull: false
     }
+},{
+    paranoid: true, // Permet à sequelize de faire de la soft-deletion
 });
 
 Users.beforeCreate(async (user, option) => {

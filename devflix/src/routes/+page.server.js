@@ -1,13 +1,9 @@
-import { Sequelize } from "sequelize";
 import { Roles } from "../lib/db/models/roles.model";
 import { Users } from "../lib/db/models/users.model";
 import { Items } from "../lib/db/models/items.model";
-import { Sessions } from "../lib/db/models/sessions.model";
-import { Items_Paniers } from "../lib/db/models/items_paniers.model.js";
-import { sequelize } from "../lib/db/db";
+import { initDB, sequelize } from "../lib/db/db";
 import { newUser } from "../lib/db/controllers/users.controller.js";
 import { newItem } from "../lib/db/controllers/items.controller.js";
-
 
 /**
  * Chargement de la page
@@ -18,7 +14,9 @@ import { newItem } from "../lib/db/controllers/items.controller.js";
  * @returns {}
  */
 export async function load({ cookies }) {
+    
     await sequelize.sync();
+    await initDB();
     
     const role_admin = await Roles.findOne({where: {id: 1}});
     const role_client = await Roles.findOne({where: {id: 2}});
@@ -30,8 +28,6 @@ export async function load({ cookies }) {
     if (!role_client)
         await newRole('client', 'Client avec autorisations réduites');
     const admin = await Users.findOne({ where: { courriel: 'admin@devflix.ca' } });
- 
-    
     if (!admin)
         await newUser('admin', 'admin', 'admin@devflix.ca', "1", 'admin');
     

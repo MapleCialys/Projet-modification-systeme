@@ -66,6 +66,10 @@
 
     <!-- Boutons en bas de page -->
     <div class="block has-text-right">
+      <form method="POST" action="?/delete">
+        <input type="number" name="id" id="id" value={user.id} required readonly hidden>
+        <input type="submit" class="button is-danger is-rounded" value="Supprimer mon compte">
+      </form>
         <Goback />
     </div>
 

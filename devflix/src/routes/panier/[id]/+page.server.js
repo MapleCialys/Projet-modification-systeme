@@ -37,7 +37,6 @@ export const actions = {
     
         try{
             const result = await deleteCart({users_id: cookie.user_id});
-            console.log(result);
         }catch(error){
             console.log(error);
         }  
@@ -54,8 +53,7 @@ export const actions = {
         const data = await request.formData();
 
         try{
-            const result = await deleteCart({ id: data.get('movie_id')});
-            console.log(result);   
+            const result = await deleteCart({ id: data.get('movie_id')});  
         }catch(error){
             console.log(error); 
         }
