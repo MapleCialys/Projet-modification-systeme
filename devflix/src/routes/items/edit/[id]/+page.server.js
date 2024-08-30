@@ -35,11 +35,14 @@ export const actions = {
      */
     edit: async({ cookies, request })=>{
         const data = await request.formData();
-        const file = data.get('image_item');
-        let filename = null;
+        const file = data.get('new_image_item');
+        let filename = data.get('image_item');
 
-        // Vérifier si file contient une image, si oui le chemin du fichier sera généré et utilisé
-        if (file && file.name) {
+        /* Vérifier si file contient un nouveau fichier image
+            Si oui le chemin du fichier filename sera généré (ou écrase l'ancien) et utilisé 
+            Si non garder l'ancien filename ou vide
+        */
+        if (file) {
             filename = `src/lib/img/items/${crypto.randomUUID()}${extname(file.name)}`;
             await writeFile(filename, Buffer.from(await file.arrayBuffer()));
         }
@@ -54,14 +57,12 @@ export const actions = {
      * Supprime un item basé sur son identifiant.
      *
      * @param {Object} params - Les paramètres de la requête, incluant l'ID de l'item à supprimer.
-     * @returns {<Object>} - Un message de succès après la suppression.
+     * @throws {Redirect} - Redirige vers la page des items après modification.
      */
     delete: async ({ params }) => {
         await deleteItem(params.id);
-        return {
-            status: 200,
-            body: { message: 'Succès :Item supprimé' }
-        };
+        // Redirection vers le catalogue
+        throw redirect(303, "/items");
     }
 
 }

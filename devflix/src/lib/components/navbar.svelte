@@ -34,7 +34,7 @@
         Catalogue
       </a>
 
-      <a class="navbar-item link" href="#">
+      <a class="navbar-item link" href="/users/">
         Mon compte
       </a>
 

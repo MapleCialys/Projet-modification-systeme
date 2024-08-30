@@ -5,6 +5,7 @@
 2. [Description](#description)
 3. [Les membres de l'équipe](#les-membres-de-léquipe)
 4. [Instructions d'installation](#instructions-dinstallation)
+5. [Accès compte admin](#accès-compte-admin)
 
 ## Description
 Projet créé dans le cadre du cours «  Modification d’un système existant ». Ce projet consiste en un répertoire de films populaires pour la location. Il contient la liste des films avec les acteurs principaux, studio et description.
@@ -35,3 +36,7 @@ L'équipe est copmposée de
     npm install --save-dev @babel/preset-env babel-jest jest svelte-jester
     npm run dev -- --open
     ```
+
+## Accès compte admin
+Courriel : admin@devflix.ca
+Mot de passe : admin
